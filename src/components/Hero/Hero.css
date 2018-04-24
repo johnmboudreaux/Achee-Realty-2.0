@@ -1,0 +1,103 @@
+/* Hero */
+
+.hero {
+    height: 100vh;
+    background-image: url("../images/hero-image.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 30px;
+}
+
+.hero-image img {
+    position: absolute;
+    top: 31%;
+    left: 10%;
+    height: 350px;
+    width: 275px;
+}
+
+
+.darken-overlay div {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.hero h2 {
+    color: #fff;
+    font-size: 50px;
+    margin: 60% 0 20px 0;
+}
+
+.hero-form-wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+}
+
+.form-control {
+    border: 0px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    background: #81968f;
+    opacity: 0.8;
+    height: 40px;
+    color: #fff;
+}
+
+.form-control:focus {
+    background: #fff;
+    color: #3E3E3E;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-color: #4F493B;
+}
+
+.form-group {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    float: left;
+    margin-right: 10px;
+}
+
+.search-form-wrapper {
+    display: flex;
+    justify-content: space-around;
+}
+
+#geo_search {
+    width: 20vw;
+}
+
+.search-form-wrapper input[type=submit] {
+    cursor: pointer;
+    margin-top: 36px;
+    width: 7vw;
+}
+
+.title-form {
+    position: absolute;
+    top: 0;
+    left: 35%;
+}
+
+::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: #fff;
+}
+
+::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #fff;
+}
+
+:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #fff;
+}
+
+:-moz-placeholder {
+    /* Firefox 18- */
+    color: #fff;
+}
