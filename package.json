@@ -22,10 +22,13 @@
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.4",
+    "react-slick": "^0.23.1",
+    "react-slick-carousel": "^0.14.9",
     "reactstrap": "^5.0.0-beta",
     "redux": "^3.7.2",
     "redux-devtools": "^3.4.1",
-    "redux-form": "^7.3.0"
+    "redux-form": "^7.3.0",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "babel": "^6.23.0",
