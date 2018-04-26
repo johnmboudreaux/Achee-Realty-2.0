@@ -49,7 +49,7 @@ class Hero extends Component {
                     </select>
                   </section>
                   <section className="form-group">
-                    <label className="minilabel" htmlFor="city_search">
+                    <label className="label" htmlFor="city_search">
                       Max.Price
                     </label>
                     <input
@@ -61,7 +61,7 @@ class Hero extends Component {
                     />
                   </section>
                   <section className="form-group">
-                    <label className="minilabel" htmlFor="min_beds">
+                    <label className="label" htmlFor="min_beds">
                       Min. Beds
                     </label>
                     <select
@@ -78,7 +78,7 @@ class Hero extends Component {
                     </select>
                   </section>
                   <section className="form-group">
-                    <label className="minilabel" htmlFor="min_baths">
+                    <label className="label" htmlFor="min_baths">
                       Min. Baths
                     </label>
                     <select
@@ -94,11 +94,15 @@ class Hero extends Component {
                       <option value="5">5+</option>
                     </select>
                   </section>
-                  <input
-                    className="form-control"
-                    id="search-form-button"
-                    type="submit"
-                  />
+                  <section className="form-group">
+                    <label className="label" htmlFor="form_submit">
+                      Get Started
+                    </label>
+                    <input
+                      className="form-control-submit"
+                      type="submit"
+                    />
+                  </section>
                 </form>
               </section>
             </section>

@@ -1,103 +1,184 @@
 /* Hero */
 
 .hero {
-    height: 100vh;
-    background-image: url("../images/hero-image.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    margin-bottom: 30px;
+  height: 100vh;
+  background-image: url('../images/hero-image.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 30px;
 }
 
 .hero-image img {
-    position: absolute;
-    top: 31%;
-    left: 10%;
-    height: 350px;
-    width: 275px;
+  position: absolute;
+  top: 31%;
+  left: 10%;
+  height: 350px;
+  width: 275px;
 }
-
 
 .darken-overlay div {
-    background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
-.hero h2 {
-    color: #fff;
-    font-size: 50px;
-    margin: 60% 0 20px 0;
+.hero-title {
+  color: #fff;
+  font-size: 2em;
+  /*margin: 0 0 20px 0;*/
+}
+
+.hero-title h2 {
+  margin: 1em 0 .5em 0;
 }
 
 .hero-form-wrapper {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    position: relative;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: relative;
 }
 
 .form-control {
-    border: 0px;
-    border-radius: 5px;
-    border: 1px solid rgba(255, 255, 255, 0.03);
-    background: #81968f;
-    opacity: 0.8;
-    height: 40px;
-    color: #fff;
+  border: 0px;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  background: #81968f;
+  opacity: 0.8;
+  height: 2em;
+  color: #fff;
+}
+
+.form-control-submit {
+  background-color: #EDF5FC;
+  border-radius: 5px;
+  cursor: pointer;
+  height: 2.35em;
+}
+
+.search-form-wrapper select {
+  height: 2.35em;
 }
 
 .form-control:focus {
-    background: #fff;
-    color: #3E3E3E;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    border-color: #4F493B;
+  background: #fff;
+  color: #3e3e3e;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-color: #4f493b;
 }
 
 .form-group {
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    float: left;
-    margin-right: 10px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  float: left;
+  margin-right: 10px;
 }
 
 .search-form-wrapper {
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 }
 
 #geo_search {
-    width: 20vw;
+  width: 20vw;
 }
 
-.search-form-wrapper input[type=submit] {
-    cursor: pointer;
-    margin-top: 36px;
-    width: 7vw;
+.label {
+  margin-bottom: .5em;
 }
 
 .title-form {
-    position: absolute;
-    top: 0;
-    left: 35%;
+  margin: 10% 0 20px 0;
+  position: absolute;
+  top: 0;
+  left: 35%;
 }
 
 ::-webkit-input-placeholder {
-    /* Chrome/Opera/Safari */
-    color: #fff;
+  /* Chrome/Opera/Safari */
+  color: #fff;
 }
 
 ::-moz-placeholder {
-    /* Firefox 19+ */
-    color: #fff;
+  /* Firefox 19+ */
+  color: #fff;
 }
 
 :-ms-input-placeholder {
-    /* IE 10+ */
-    color: #fff;
+  /* IE 10+ */
+  color: #fff;
 }
 
 :-moz-placeholder {
-    /* Firefox 18- */
-    color: #fff;
+  /* Firefox 18- */
+  color: #fff;
+}
+
+/* header chevron */
+
+#hero-chevron {
+  position: absolute;
+  bottom: 0;
+  height: 100px;
+  width: 100%;
+  text-align: center;
+}
+
+#hero-chevron a span {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 35px;
+  height: 35px;
+  margin-left: -12px;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-animation: sdb07 2s infinite;
+  animation: sdb07 2s infinite;
+  opacity: 0;
+  box-sizing: border-box;
+}
+
+#hero-chevron a span:nth-of-type(1) {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+}
+
+#hero-chevron a span:nth-of-type(2) {
+  top: 20%;
+  -webkit-animation-delay: 0.15s;
+  animation-delay: 0.15s;
+}
+
+#hero-chevron a span:nth-of-type(3) {
+  top: 40%;
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+
+@-webkit-keyframes sdb07 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes sdb07 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }

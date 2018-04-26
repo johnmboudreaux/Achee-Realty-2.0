@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
 import Slider from 'react-slick';
+import image1 from '../images/image1.JPG';
+import image2 from '../images/image2.JPG';
+import image3 from '../images/image3.JPG';
+import image4 from '../images/image4.JPG';
+import image5 from '../images/image5.JPG';
+import './Slider.css';
 
 class SlickSlider extends Component {
   render() {
@@ -14,30 +20,26 @@ class SlickSlider extends Component {
     };
     return (
       <div>
-        <h2>Pause On Hover</h2>
-        <Slider {...settings}>
+        <Slider className="auto-play" {...settings}>
           <div>
-            <h3>1</h3>
-            <div>
-              <img src="../images/image1.JPG" alt="" />
-            </div>
+            <img href="#" src={image1} alt="" />
           </div>
           <div>
-            <h3>2</h3>
+            <img href="#" src={image2} alt="" />
           </div>
           <div>
-            <h3>3</h3>
+            <img href="#" src={image3} alt="" />
           </div>
           <div>
-            <h3>4</h3>
+            <img href="#" src={image4} alt="" />
           </div>
           <div>
-            <h3>5</h3>
-          </div>
-          <div>
-            <h3>6</h3>
+            <img href="#" src={image5} alt="" />
           </div>
         </Slider>
+        <div>
+          <button className="back-to-top">BACK TO TOP</button>
+        </div>
       </div>
     );
   }
