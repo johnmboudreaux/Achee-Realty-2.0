@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
+import { Row, Col, Input, Container } from 'reactstrap';
 import './Footer.css';
 
 class Footer extends Component {
   render() {
     return (
-      <div>
-        <div id="footer">
-          <div className="container">
-            <div className="row">
-              <section className="3u 6u(narrower) 12u$(mobilep)">
+      <div id="footer">
+        <div className="container">
+          <Row>
+            <Col sm={3}>
+              <div className="helpful-links">
                 <h3>Helpful Links</h3>
                 <ul className="links">
                   <li>
@@ -59,8 +60,10 @@ class Footer extends Component {
                     </a>
                   </li>
                 </ul>
-              </section>
-              <section className="3u 6u$(narrower) 12u$(mobilep)">
+              </div>
+            </Col>
+            <Col sm={3}>
+              <div className="things-to-do">
                 <h3>Things To Do?</h3>
                 <ul className="links">
                   <li>
@@ -92,12 +95,13 @@ class Footer extends Component {
                     <a href="#">Rutrum amet varius</a>
                   </li>
                 </ul>
-              </section>
-              <section className="6u 12u(narrower)">
+              </div>
+            </Col>
+            <Col sm={6}>
+              <div className="contact">
                 <h3>Get In Touch</h3>
                 <form>
-                  <div className="row 50%">
-                    <div className="6u 12u(mobilep)">
+                    <div className="6u 12u(mobilep) footer-contact-name">
                       <input
                         type="text"
                         name="name"
@@ -105,7 +109,7 @@ class Footer extends Component {
                         placeholder="Name"
                       />
                     </div>
-                    <div className="6u 12u(mobilep)">
+                    <div className="6u 12u(mobilep) footer-contact-email">
                       <input
                         type="email"
                         name="email"
@@ -113,8 +117,6 @@ class Footer extends Component {
                         placeholder="Email"
                       />
                     </div>
-                  </div>
-                  <div className="row 50%">
                     <div className="12u">
                       <textarea
                         name="message"
@@ -122,7 +124,6 @@ class Footer extends Component {
                         placeholder="Message"
                         rows="5"
                       />
-                    </div>
                   </div>
                   <div className="row 50%">
                     <div className="12u">
@@ -138,43 +139,18 @@ class Footer extends Component {
                     </div>
                   </div>
                 </form>
-              </section>
-            </div>
-          </div>
-
-          <ul className="icons">
-            <li>
-              <a href="#" className="icon fa-twitter">
-                <span className="label">Twitter</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" className="icon fa-facebook">
-                <span className="label">Facebook</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" className="icon fa-github">
-                <span className="label">GitHub</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" className="icon fa-linkedin">
-                <span className="label">LinkedIn</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" className="icon fa-google-plus">
-                <span className="label">Google+</span>
-              </a>
-            </li>
-          </ul>
-
-          <div className="copyright">
-            <ul className="menu">
-              <li>&copy; Untitled. All rights reserved</li>
-            </ul>
-          </div>
+              </div>
+            </Col>
+          </Row>
+          <Row>
+            <Col sm={12}>
+              <div className="copyright">
+                <ul className="menu">
+                  <li>&copy; Untitled. All rights reserved</li>
+                </ul>
+              </div>
+            </Col>
+          </Row>
         </div>
       </div>
     );

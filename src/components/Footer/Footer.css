@@ -2,6 +2,7 @@
 #footer {
     background-color: lightslategray;
     padding: 4em 0 8em 0;
+    margin-bottom: 4em;
 }
 
 #footer a {
@@ -12,10 +13,6 @@
 #footer a:hover {
     color: #37c0fb;
     border-bottom-color: transparent;
-}
-
-#footer .container {
-    margin-bottom: 4em;
 }
 
 #footer .icons {
@@ -33,7 +30,61 @@
 
 #footer .copyright {
     color: #999;
-    margin-top: 1.5em;
+    margin-top: 3.5em;
     text-align: center;
     font-size: 0.9em;
+}
+
+.icon {
+    text-decoration: none;
+    position: relative;
+}
+
+.icon:before {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-transform: none !important;
+}
+
+.icon>.label {
+    display: none;
+}
+
+.icon.major {
+    text-align: center;
+    cursor: default;
+    background-color: #37c0fb;
+    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15)), url("../images/bg01.png");
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15)), url("../images/bg01.png");
+    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15)), url("../images/bg01.png");
+    background-image: linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15)), url("../images/bg01.png");
+    color: #fff;
+    border-radius: 100%;
+    display: inline-block;
+    width: 5em;
+    height: 5em;
+    line-height: 5em;
+    box-shadow: 0 0 0 7px white, 0 0 0 8px #e0e0e0;
+    margin: 0 0 2em 0;
+}
+
+.icon.major:before {
+    font-size: 36px;
+}
+
+.row {
+  flex-wrap: nowrap;
+}
+
+.links {
+  margin-left: -40px;
+}
+
+.footer-contact-name,
+.footer-contact-email {
+  margin: 0 10px 10px 0;
+  width: 50%;
 }

@@ -5,9 +5,9 @@ import image2 from '../images/image2.JPG';
 import image3 from '../images/image3.JPG';
 import image4 from '../images/image4.JPG';
 import image5 from '../images/image5.JPG';
-import './Slider.css';
+import './CurrentListings.css';
 
-class SlickSlider extends Component {
+class CurrentListings extends Component {
   render() {
     const settings = {
       dots: false,
@@ -45,4 +45,4 @@ class SlickSlider extends Component {
   }
 }
 
-export default SlickSlider;
+export default CurrentListings;
