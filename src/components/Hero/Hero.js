@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col, Input, Container } from 'reactstrap';
+import { withRouter } from 'react-router-dom';
 import './Hero.css';
 
 class Hero extends Component {
@@ -99,7 +99,6 @@ class Hero extends Component {
                       Get Started
                     </label>
                     <input
-                      className="form-control-submit"
                       type="submit"
                     />
                   </section>
@@ -120,4 +119,4 @@ class Hero extends Component {
   }
 }
 
-export default Hero;
+export default withRouter(Hero);

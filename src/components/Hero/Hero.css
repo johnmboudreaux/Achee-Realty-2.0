@@ -44,15 +44,7 @@
   border: 1px solid rgba(255, 255, 255, 0.03);
   background: #81968f;
   opacity: 0.8;
-  /*height: 2em;*/
   color: #fff;
-}
-
-.form-control-submit {
-  background-color: #EDF5FC;
-  border-radius: 5px;
-  cursor: pointer;
-  height: 2.35em;
 }
 
 .search-form-wrapper select {
