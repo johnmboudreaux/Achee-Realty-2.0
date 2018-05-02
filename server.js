@@ -1,29 +1,37 @@
 const express = require('express');
-const path = require('path');
 const cors = require('express-cors');
 const bodyParser = require('body-parser');
 
 const app = express();
-const port = process.env.PORT || 8080;
+const environment = process.env.NODE_ENV || 'development';
+const path = require('path');
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors());
+app.set('port', process.env.PORT || 4000);
+app.locals.title = 'Achee Realty';
+app.use(express.static('www'));
+
 const requireHTTPS = (request, response, next) => {
   if (request.header('x-forwarded-proto') !== 'https') {
     return response.redirect(`https://${request.header('host')}${request.url}`);
   }
   next();
 };
-
 if (process.env.NODE_ENV === 'production') { app.use(requireHTTPS); }
 
-app.use(cors());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
 
-app.set('port', process.env.PORT || 8080);
-
-app.get('/', (reqest, response) => {
-  console.log('nyello');
+app.get('/', (request, response) => {
+  response.sendFile(path.join(__dirname, '/public/index.html'));
 });
 
-app.listen(port);
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'www/index.html'));
+});
 
-console.log(`Listening at http://localhost:${port}`);
+app.listen(app.get('port'), () => {
+  console.log(`${app.locals.title} is running on ${app.get('port')}.`);
+});
+
+module.exports = app;

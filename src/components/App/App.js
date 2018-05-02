@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
-import CurrentListings from '../CurrentListings/CurrentListings';
 import Hero from '../Hero/Hero';
+import CurrentListings from '../CurrentListings/CurrentListings';
 import Footer from '../Footer/Footer';
 import './App.css';
 
@@ -11,8 +11,8 @@ class App extends Component {
       <div className="App">
         <Route exact path="/" component={Hero} />
         {/* <Hero /> */}
-        <CurrentListings />
-        <Footer />
+        {/* <CurrentListings /> */}
+        {/* <Footer /> */}
       </div>
     );
   }

@@ -1,0 +1,76 @@
+.hero-form-wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: relative;
+}
+
+.search-form-wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+.search-form-wrapper select {
+  height: 2.35em;
+}
+
+.form-control {
+  border: 0px;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  background: #81968f;
+  opacity: 0.8;
+  color: #fff;
+}
+
+.form-control:focus {
+  background: #fff;
+  color: #3e3e3e;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-color: #4f493b;
+}
+
+.form-group {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  float: left;
+  margin-right: 10px;
+}
+
+#geo_search {
+  width: 20vw;
+}
+
+.label {
+  margin-bottom: .5em;
+}
+
+.title-form {
+  margin: 10% 0 20px 0;
+  position: absolute;
+  top: 10%;
+  left: 30%;
+}
+
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #fff;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #fff;
+}
+
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #fff;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #fff;
+}
