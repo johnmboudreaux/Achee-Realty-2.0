@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import Hero from '../Hero/Hero';
-import CurrentListings from '../CurrentListings/CurrentListings';
 import Footer from '../Footer/Footer';
+import SearchResults from '../SearchResults/SearchResults';
 import './App.css';
 
 class App extends Component {
@@ -10,9 +10,8 @@ class App extends Component {
     return (
       <div className="App">
         <Route exact path="/" component={Hero} />
-        {/* <Hero /> */}
-        {/* <CurrentListings /> */}
-        {/* <Footer /> */}
+        <Route exact path="/api/v1/search" component={SearchResults} />
+        <Footer />
       </div>
     );
   }

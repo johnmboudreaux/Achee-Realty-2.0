@@ -3,14 +3,13 @@ import PropTypes from 'prop-types';
 import './Search.css';
 
 const Search = ({ addressInputValue, updateState, getListing }) => {
-  console.log(this.addressInputValue);
   return (
     <section className="title-form">
       <section className="hero-title">
         <h2>Find Your Dream Home</h2>
       </section>
       <section className="search-form-wrapper">
-        <form id="search-form" action="">
+        <form id="search-form">
           <section className="form-group">
             <label className="label" htmlFor="address">
               Address
@@ -19,7 +18,6 @@ const Search = ({ addressInputValue, updateState, getListing }) => {
               className="form-control"
               id="geo_search"
               name="geo_search"
-              // value=""
               placeholder="City, State or Zip"
               type="text"
             />
@@ -51,7 +49,6 @@ const Search = ({ addressInputValue, updateState, getListing }) => {
               className="form-control"
               id="maxprice"
               name="max_price"
-              // value=""
               placeholder="Max. Price"
               type="number"
             />
@@ -96,7 +93,13 @@ const Search = ({ addressInputValue, updateState, getListing }) => {
             <label className="label" htmlFor="form_submit">
               Get Started
             </label>
-            <input type="submit" onClick={this.getListing} />
+            <input
+              type="submit"
+              onClick={(e) => {
+                e.preventDefault();
+                getListing();
+              }}
+            />
           </section>
         </form>
       </section>

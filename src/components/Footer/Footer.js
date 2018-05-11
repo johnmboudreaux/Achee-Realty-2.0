@@ -101,19 +101,19 @@ class Footer extends Component {
                     </a>
                   </li>
                   <li>
-                    <a href="#">Rutrum accumsan sed</a>
+                    <a href="">Rutrum accumsan sed</a>
                   </li>
                   <li>
-                    <a href="#">Mattis et sed accumsan</a>
+                    <a href="">Mattis et sed accumsan</a>
                   </li>
                   <li>
-                    <a href="#">Duis neque nisi sed</a>
+                    <a href="">Duis neque nisi sed</a>
                   </li>
                   <li>
-                    <a href="#">Sed et dapibus quis</a>
+                    <a href="">Sed et dapibus quis</a>
                   </li>
                   <li>
-                    <a href="#">Rutrum amet varius</a>
+                    <a href="">Rutrum amet varius</a>
                   </li>
                 </ul>
               </div>

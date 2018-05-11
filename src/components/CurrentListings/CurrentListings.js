@@ -20,7 +20,7 @@ class CurrentListings extends Component {
     };
     return (
       <div>
-        <Slider className="auto-play" {...settings}>
+        <Slider id="autoPlay" className="auto-play" {...settings}>
           <div>
             <img href="#" src={image1} alt="" />
           </div>
