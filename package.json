@@ -13,6 +13,7 @@
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive"
   },
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "body-parser": "^1.18.2",
     "bootstrap": "^4.1.0",
     "dotenv": "^5.0.1",
@@ -36,6 +37,7 @@
     "redux": "^3.7.2",
     "redux-devtools": "^3.4.1",
     "redux-form": "^7.3.0",
+    "redux-thunk": "^2.2.0",
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {

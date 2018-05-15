@@ -2,7 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Search.css';
 
-const Search = ({ addressInputValue, updateState, getListing }) => {
+const Search = ({
+  address,
+  citystatezip,
+  radius,
+  maxPrice,
+  minBeds,
+  minBaths,
+  updateState,
+  getListing,
+}) => {
   return (
     <section className="title-form">
       <section className="hero-title">
@@ -20,6 +29,7 @@ const Search = ({ addressInputValue, updateState, getListing }) => {
               name="geo_search"
               placeholder="City, State or Zip"
               type="text"
+              onChange={updateState}
             />
           </section>
           <section className="form-group">
@@ -30,7 +40,7 @@ const Search = ({ addressInputValue, updateState, getListing }) => {
               className="form-control"
               id="radius"
               name="search_radius"
-              onChange={this.updateState}
+              onChange={updateState}
             >
               <option value="1">1 mile</option>
               <option value="2">2 miles</option>
@@ -51,6 +61,7 @@ const Search = ({ addressInputValue, updateState, getListing }) => {
               name="max_price"
               placeholder="Max. Price"
               type="number"
+              onChange={updateState}
             />
           </section>
           <section className="form-group">
@@ -58,10 +69,10 @@ const Search = ({ addressInputValue, updateState, getListing }) => {
               Min. Beds
             </label>
             <select
-              onChange={this.updateState}
               className="form-control"
               id="minbeds"
               name="min_beds"
+              onChange={updateState}
             >
               <option value="">Any</option>
               <option value="1">1</option>
@@ -76,10 +87,10 @@ const Search = ({ addressInputValue, updateState, getListing }) => {
               Min. Baths
             </label>
             <select
-              onChange={this.updateState}
               className="form-control"
               id="minbaths"
               name="min_baths"
+              onChange={updateState}
             >
               <option value="">Any</option>
               <option value="1">1+</option>
@@ -108,7 +119,12 @@ const Search = ({ addressInputValue, updateState, getListing }) => {
 };
 
 Search.propTypes = {
-  addressInputValue: PropTypes.string,
+  address: PropTypes.string,
+  citystatezip: PropTypes.string,
+  radius: PropTypes.number,
+  maxPrice: PropTypes.number,
+  minBeds: PropTypes.number,
+  minBaths: PropTypes.number,
   updateState: PropTypes.func,
   getListing: PropTypes.func,
 };
