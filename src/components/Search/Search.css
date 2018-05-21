@@ -6,9 +6,15 @@
   position: relative;
 }
 
+.search-form {
+  display: flex;
+  flex-direction: row;
+}
+
 .search-form-wrapper {
   display: flex;
-  justify-content: space-around;
+  flex-direction: row;
+  /*justify-content: space-around;*/
 }
 
 .search-form-wrapper select {
@@ -21,11 +27,12 @@
   border: 1px solid rgba(255, 255, 255, 0.03);
   background: #81968f;
   opacity: 0.8;
-  color: #fff;
+  color: black;
 }
 
 .form-control:focus {
   background: #fff;
+  color: black;
   color: #3e3e3e;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -34,9 +41,6 @@
 
 .form-group {
   color: #fff;
-  display: flex;
-  flex-direction: column;
-  float: left;
   margin-right: 10px;
 }
 
@@ -45,14 +49,15 @@
 }
 
 .label {
-  margin-bottom: .5em;
+  display: flex;
+  flex-direction: column;
 }
 
 .title-form {
   margin: 10% 0 20px 0;
-  position: absolute;
+  /*position: absolute;
   top: 10%;
-  left: 30%;
+  left: 30%;*/
 }
 
 ::-webkit-input-placeholder {

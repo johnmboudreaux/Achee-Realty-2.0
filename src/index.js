@@ -9,7 +9,7 @@ import { BrowserRouter } from 'react-router-dom';
 import rootReducer from './reducers';
 import './index.css';
 import App from './components/App/App';
-import { loadCurrentListings } from './components/LandingPage/Actions';
+import { loadCurrentListings } from './components/Search/Actions';
 import registerServiceWorker from './registerServiceWorker';
 
 const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ &&

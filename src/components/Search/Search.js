@@ -1,57 +1,92 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as Actions from './Actions';
 import './Search.css';
 
-const Search = ({
-  address,
-  citystatezip,
-  radius,
-  maxPrice,
-  minBeds,
-  minBaths,
-  updateState,
-  getListing,
-}) => {
-  return (
-    <section className="title-form">
-      <section className="hero-title">
-        <h2>Find Your Dream Home</h2>
-      </section>
-      <section className="search-form-wrapper">
-        <form id="search-form">
-          <section className="form-group">
-            <label className="label" htmlFor="address">
-              Address
-            </label>
-            <input
-              className="form-control"
-              id="geo_search"
-              name="geo_search"
-              placeholder="City, State or Zip"
-              type="text"
-              onChange={updateState}
-            />
-          </section>
-          <section className="form-group">
-            <label className="label" htmlFor="search_radius">
-              Radius
-            </label>
-            <select
-              className="form-control"
-              id="radius"
-              name="search_radius"
-              onChange={updateState}
-            >
-              <option value="1">1 mile</option>
-              <option value="2">2 miles</option>
-              <option value="5">5 miles</option>
-              <option value="10">10 miles</option>
-              <option value="20">20 miles</option>
-              <option value="50">50 miles</option>
-              <option value="100">100 miles</option>
-            </select>
-          </section>
-          <section className="form-group">
+class Search extends Component {
+  constructor(props, context) {
+    super(props, context);
+    this.state = {
+      streetAddress: '',
+      citystatezip: '',
+      // radius: 0,
+      // maxPrice: 0,
+      // minBeds: 0,
+      // minBaths: 0,
+    };
+    this.updateState = this.updateState.bind(this);
+    this.getListing = this.getListing.bind(this);
+  }
+
+  getListing() {
+    this.props.actions.loadCurrentListings(
+      this.state.streetAddress,
+      this.state.citystatezip,
+    );
+  }
+
+  updateState(event) {
+    this.setState({
+      [event.target.name]: event.target.value,
+    });
+  }
+
+  render() {
+    return (
+      <section className="title-form">
+        <section className="hero-title">
+          <h2>Find Your Dream Home</h2>
+        </section>
+        <section className="search-form-wrapper">
+          <form className="search-form">
+            <section className="form-group">
+              <label className="label" htmlFor="streetAddress">
+                Street Address
+                <input
+                  className="form-control"
+                  id="geo_search"
+                  name="streetAddress"
+                  placeholder="Street Address"
+                  onChange={this.updateState}
+                  type="text"
+                />
+              </label>
+            </section>
+            <section className="form-group">
+              <label className="label" htmlFor="citystatezip">
+                City, State and Zip
+                <input
+                  className="form-control"
+                  id="geo_search"
+                  name="citystatezip"
+                  placeholder="City, State, Zip"
+                  onChange={this.updateState}
+                  type="text"
+                />
+              </label>
+            </section>
+            {/* <section className="form-group">
+              <label className="label" htmlFor="radius">
+                Radius
+                <select
+                  className="form-control"
+                  id="radius"
+                  name="radius"
+                  onChange={this.updateState}
+                >
+                  <option value="1">1 mile</option>
+                  <option value="2">2 miles</option>
+                  <option value="5">5 miles</option>
+                  <option value="10">10 miles</option>
+                  <option value="20">20 miles</option>
+                  <option value="50">50 miles</option>
+                  <option value="100">100 miles</option>
+                </select>
+              </label>
+            </section> */}
+            {/* <section className="form-group">
             <label className="label" htmlFor="city_search">
               Max.Price
             </label>
@@ -61,72 +96,80 @@ const Search = ({
               name="max_price"
               placeholder="Max. Price"
               type="number"
-              onChange={updateState}
+              onChange={this.updateState}
             />
-          </section>
-          <section className="form-group">
-            <label className="label" htmlFor="min_beds">
-              Min. Beds
-            </label>
-            <select
-              className="form-control"
-              id="minbeds"
-              name="min_beds"
-              onChange={updateState}
-            >
-              <option value="">Any</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-            </select>
-          </section>
-          <section className="form-group">
-            <label className="label" htmlFor="min_baths">
-              Min. Baths
-            </label>
-            <select
-              className="form-control"
-              id="minbaths"
-              name="min_baths"
-              onChange={updateState}
-            >
-              <option value="">Any</option>
-              <option value="1">1+</option>
-              <option value="2">2+</option>
-              <option value="3">3+</option>
-              <option value="4">4+</option>
-              <option value="5">5+</option>
-            </select>
-          </section>
-          <section className="form-group">
-            <label className="label" htmlFor="form_submit">
-              Get Started
-            </label>
-            <input
-              type="submit"
-              onClick={(e) => {
-                e.preventDefault();
-                getListing();
-              }}
-            />
-          </section>
-        </form>
+          </section> */}
+            {/* <section className="form-group">
+              <label className="label" htmlFor="min_beds">
+                Min. Beds
+                <select
+                  className="form-control"
+                  id="minbeds"
+                  name="min_beds"
+                  onChange={this.updateState}
+                >
+                  <option value="">Any</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </label>
+            </section>
+            <section className="form-group">
+              <label className="label" htmlFor="min_baths">
+                Min. Baths
+                <select
+                  className="form-control"
+                  id="minbaths"
+                  name="min_baths"
+                  onChange={this.updateState}
+                >
+                  <option value="">Any</option>
+                  <option value="1">1+</option>
+                  <option value="2">2+</option>
+                  <option value="3">3+</option>
+                  <option value="4">4+</option>
+                  <option value="5">5+</option>
+                </select>
+              </label>
+            </section> */}
+            <section className="form-group">
+              <label className="label" htmlFor="form_submit">
+                Get Started
+                <input
+                  type="submit"
+                  name="form_submit"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    this.getListing();
+                  }}
+                />
+              </label>
+            </section>
+          </form>
+        </section>
       </section>
-    </section>
-  );
-};
+    );
+  }
+}
 
 Search.propTypes = {
-  address: PropTypes.string,
-  citystatezip: PropTypes.string,
-  radius: PropTypes.number,
-  maxPrice: PropTypes.number,
-  minBeds: PropTypes.number,
-  minBaths: PropTypes.number,
-  updateState: PropTypes.func,
-  getListing: PropTypes.func,
+  actions: PropTypes.object,
+  loadCurrentListings: PropTypes.func,
 };
 
-export default Search;
+const mapStateToProps = (store, ownProps) => {
+  return {
+    currentListings: store.currentListings,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    actions: bindActionCreators(Actions, dispatch),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Search);
