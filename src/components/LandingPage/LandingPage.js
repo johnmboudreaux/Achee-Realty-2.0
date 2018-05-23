@@ -3,7 +3,6 @@ import { withRouter, Link } from 'react-router-dom';
 import Scrollchor from 'react-scrollchor';
 // import Slider from 'react-slick';
 import './LandingPage.css';
-import Search from '../Search/Search';
 import CurrentListings from '../CurrentListings/CurrentListings';
 
 class LandingPage extends Component {
@@ -16,7 +15,7 @@ class LandingPage extends Component {
               <h2>Click Below To Start Your Search</h2>
             </section>
             <li className="nav-links">
-              <Link to="/Search">Find A Place To Call Home</Link>
+              <Link to="/Search">Find A Place To Call Home and Get The Details</Link>
             </li>
             <section id="hero-chevron" className="demo">
               <Scrollchor

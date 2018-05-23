@@ -9,11 +9,12 @@
 .search-form {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
 }
 
 .search-form-wrapper {
-  display: flex;
-  flex-direction: row;
+  /*display: flex;
+  flex-direction: row;*/
 }
 
 .search-form-wrapper select {
@@ -44,10 +45,11 @@
 }
 
 #geo_search {
-  width: 20vw;
+  width: 40vw;
 }
 
 .label {
+  color: black;
   display: flex;
   flex-direction: column;
 }
