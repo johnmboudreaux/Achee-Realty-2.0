@@ -36,9 +36,10 @@ class Search extends Component {
   render() {
     return (
       <section className="title-form">
-        <section className="hero-title">
+        {/* <section className="hero - title;
+">
           <h2>Find Your Dream Home</h2>
-        </section>
+        </section> */}
         <section className="search-form-wrapper">
           <form className="search-form">
             <section className="form-group">
@@ -144,6 +145,7 @@ class Search extends Component {
                   onClick={(e) => {
                     e.preventDefault();
                     this.getListing();
+                    // this.props.history.push('/searchedResults');
                   }}
                 />
               </label>

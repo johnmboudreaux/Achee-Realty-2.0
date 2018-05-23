@@ -14,7 +14,6 @@
 .search-form-wrapper {
   display: flex;
   flex-direction: row;
-  /*justify-content: space-around;*/
 }
 
 .search-form-wrapper select {

@@ -33,8 +33,7 @@ const requireHTTPS = (request, response, next) => {
 if (process.env.NODE_ENV === 'production') { app.use(requireHTTPS); }
 
 
-app.get('/api/v1/search', (request, response) => {
-  console.log(request.query);
+app.get('/api/v1/deepSearch', (request, response) => {
   return zillow.get('GetDeepSearchResults', request.query)
     .then(searchedResults => response.status(222).json(searchedResults))
     .catch(error => console.log(error));

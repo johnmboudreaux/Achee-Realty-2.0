@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import Scrollchor from 'react-scrollchor';
 // import Slider from 'react-slick';
 import './LandingPage.css';
@@ -12,7 +12,12 @@ class LandingPage extends Component {
       <div className="App">
         <div className="hero darken-overlay">
           <div className="hero-form-wrapper">
-            <Search />
+            <section className="hero-title">
+              <h2>Click Below To Start Your Search</h2>
+            </section>
+            <li className="nav-links">
+              <Link to="/Search">Find A Place To Call Home</Link>
+            </li>
             <section id="hero-chevron" className="demo">
               <Scrollchor
                 to="autoPlay"
@@ -33,8 +38,6 @@ class LandingPage extends Component {
     );
   }
 }
-LandingPage.propTypes = {
-
-};
+LandingPage.propTypes = {};
 
 export default withRouter(LandingPage);
