@@ -35,7 +35,13 @@ if (process.env.NODE_ENV === 'production') { app.use(requireHTTPS); }
 
 app.get('/api/v1/deepSearch', (request, response) => {
   return zillow.get('GetDeepSearchResults', request.query)
-    .then(searchedResults => response.status(222).json(searchedResults))
+    .then(searchedResults => response.status(200).json(searchedResults))
+    .catch(error => console.log(error));
+});
+
+app.get('/api/v1/deepComps', (request, response) => {
+  return zillow.get('GetDeepComps', request.query)
+    .then(searchedResults => response.status(200).json(searchedResults))
     .catch(error => console.log(error));
 });
 

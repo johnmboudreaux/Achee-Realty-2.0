@@ -21,18 +21,38 @@ class Search extends Component {
     this.getPropertyComps = this.getPropertyComps.bind(this);
   }
 
-  getPropertyDetails() {
-    this.props.actions.loadPropertyDetails(
-      this.state.streetAddress,
-      this.state.citystatezip,
-    );
+  getPropertyDetails(address, citystatezip) {
+    return fetch(
+      `/api/v1/deepSearch?address=${address}&citystatezip=${citystatezip}`,
+    )
+      .then(results => results.json())
+      .then(parsedResponse => parsedResponse)
+      .then(listingData =>
+        this.props.actions.loadPropertyDetails(
+          listingData.response.results.result,
+        ),
+      )
+      .catch(error => console.log(error));
   }
 
-  getPropertyComps() {
-    this.props.actions.loadPropertyComps(
-      this.state.streetAddress,
-      this.state.citystatezip,
-    );
+  getPropertyComps(dispatch, address, citystatezip) {
+    // this.props.actions.loadPropertyComps(
+    //   this.state.streetAddress,
+    //   this.state.citystatezip,
+    // );
+    return fetch(
+      `/api/v1/deepComps?address=${address}&citystatezip=${citystatezip}`,
+    )
+      .then(results => results.json())
+      .then(parsedResponse => console.log(parsedResponse))
+      .then(listingData =>
+        dispatch(
+          this.props.actions.loadPropertyDetailsSuccess(
+            listingData.response.results.result,
+          ),
+        ),
+      )
+      .catch(error => console.log(error));
   }
 
   updateState(event) {
@@ -47,49 +67,45 @@ class Search extends Component {
         <section className="search-form-wrapper">
           <form className="search-form">
             <section className="form-group">
-              <label className="label" htmlFor="streetAddress">
-                Street Address
-                <input
-                  className="form-control"
-                  id="geo_search"
-                  name="streetAddress"
-                  placeholder="Street Address"
-                  onChange={this.updateState}
-                  type="text"
-                />
-              </label>
+              Street Address
+              <input
+                className="form-control"
+                id="geo_search"
+                name="streetAddress"
+                placeholder="Street Address"
+                onChange={this.updateState}
+                type="text"
+              />
             </section>
             <section className="form-group">
-              <label className="label" htmlFor="citystatezip">
-                City, State and Zip
-                <input
-                  className="form-control"
-                  id="geo_search"
-                  name="citystatezip"
-                  placeholder="City, State, Zip"
-                  onChange={this.updateState}
-                  type="text"
-                />
-              </label>
+              City, State and Zip
+              <input
+                className="form-control"
+                id="geo_search"
+                name="citystatezip"
+                placeholder="City, State, Zip"
+                onChange={this.updateState}
+                type="text"
+              />
             </section>
           </form>
           <section className="">
             <label className="label" htmlFor="form_submit">
-              Get Property Info
+              Get General Property Details
               <input
                 className="property-details"
                 type="submit"
                 name="form_submit"
                 onClick={(e) => {
                   e.preventDefault();
-                  this.getPropertyDetails();
+                  this.getPropertyDetails(this.state.streetAddress, this.state.citystatezip);
                 }}
               />
             </label>
           </section>
           <section className="">
             <label className="label" htmlFor="form_submit">
-              Get Property Info
+              Get Property Comps
               <input
                 className="property-comps"
                 type="submit"
@@ -103,7 +119,7 @@ class Search extends Component {
           </section>
           <section className="">
             <label className="label" htmlFor="form_submit">
-              Get Property Info
+              Get Monthly Payments Info
               <input
                 className="property-value"
                 type="submit"
@@ -126,11 +142,10 @@ Search.propTypes = {
   loadPropertyDetails: PropTypes.func,
 };
 
-const mapStateToProps = (store, ownProps) => {
-  return {
-    currentListings: store.currentListings,
-  };
-};
+const mapStateToProps = (store, ownProps) => ({
+  propertyDetails: store.propertyDetails,
+});
+
 
 const mapDispatchToProps = (dispatch) => {
   return {
