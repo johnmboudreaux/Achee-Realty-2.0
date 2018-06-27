@@ -11,14 +11,29 @@ class ContactForm extends Component {
       message: '',
     };
     this.updateState = this.updateState.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick(event) {
     event.preventDefault();
-    console.log('nyello');
-    return fetch('/api/v1/messageSent')
+    const postBody = {
+      name: this.state.name,
+      email: this.state.email,
+      message: this.state.message,
+    };
+
+    return fetch('/api/v1/messageReceived', {
+      headers: {
+        // 'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json',
+      },
+      method: 'POST',
+      body: JSON.stringify(postBody),
+    })
       .then(result => result.json())
-      .then(parsedResponse => console.log(parsedResponse),
+      .then(parsedResponse => console.log(parsedResponse)
+        .catch(error => console.log('error', error),
+        ),
       );
   }
 
@@ -55,7 +70,7 @@ class ContactForm extends Component {
               />
             </div>
             <div className="contact-city">
-              <input type="text" id="city" value="" placeholder="City" />
+              <input type="text" id="city" value="" placeholder="City" autoComplete="city" />
             </div>
             <div className="message-input">
               <textarea

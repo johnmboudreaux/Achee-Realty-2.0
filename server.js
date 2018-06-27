@@ -8,7 +8,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 
 // app.set('port', process.env.PORT || 4000);
-const environment = process.env.NODE_ENV || 'development';
+// const environment = process.env.NODE_ENV || 'development';
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -28,7 +28,7 @@ if (process.env.NODE_ENV === 'production') {
   app.use(requireHTTPS);
 }
 
-app.post('/messageReceived', (request, response) => {
+app.post('/api/v1/messageReceived', (request, response) => {
   const data = request.body;
 
   if (data.name && data.email && data.message) {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter, Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import Scrollchor from 'react-scrollchor';
 // import Slider from 'react-slick';
 import './LandingPage.css';
@@ -14,9 +14,9 @@ class LandingPage extends Component {
             <section className="hero-title">
               <h2>Click Below To Start Your Search</h2>
             </section>
-            <li className="nav-links">
+            {/* <li className="nav-links">
               <Link to="/Search">Find A Place To Call Home and Get The Details</Link>
-            </li>
+            </li> */}
             <section id="hero-chevron" className="demo">
               <Scrollchor
                 to="autoPlay"
