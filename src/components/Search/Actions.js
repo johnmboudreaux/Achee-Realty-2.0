@@ -3,7 +3,7 @@ export const loadPropertyDetails = propertyDetails => ({
   propertyDetails,
 });
 
-export const loadPropertyComps = propertyComps => ({
+export const loadPropertyCompsSuccess = propertyComps => ({
   type: 'LOAD_PROPERTY_COMPS',
   propertyComps,
 });

@@ -1,61 +1,48 @@
 const express = require('express');
-const bodyParser = require('body-parser');
-const nodemailer = require('nodemailer');
+require('dotenv').config();
 
 const app = express();
+const Zillow = require('node-zillow');
+const path = require('path');
+const bodyParser = require('body-parser');
+const cors = require('express-cors');
 
-app.set('port', process.env.PORT || 4000);
+const key = process.env.ZILLOW_KEY;
+const zillow = new Zillow(key);
+const zwsid = process.env.ZWSID;
+// const params = {
+//   address: '6825 Garrison St',
+//   citystatezip: 'arvada, co 80004',
+// };
+const environment = process.env.NODE_ENV || 'development';
+
+app.use(cors());
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-  extended: true,
-}));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.set('port', process.env.PORT || 4000);
 app.locals.title = 'Achee Realty';
 app.use(express.static('src'));
 
-app.post('/sendMessage', (req, res) => {
-  const data = req.body;
 
-  if (data.name && data.email && data.message) {
-    const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user: 'johnmboudreaux@gmail.com',
-        pass: 'C00per@nn1',
-      },
-    });
-
-
-    const mailOptions = {
-      from: 'jm <johnmboudreaux@gmail.com>',
-      to: 'johnmboudreaux@gmail.com',
-      subject: 'New Message From Achee Realty App',
-      name: data.name,
-      message: data.message,
-    };
-
-    transporter.sendMail(mailOptions, (err, info) => {
-      if (err) {
-        console.log('error', err);
-      } else {
-        transporter.close();
-        console.log('info', info);
-      }
-    });
-  } else if (data.city) {
-    res.status(406).json({
-      success: false,
-      error: 'Bot Detected',
-    });
-  } else {
-    res.status(406).json({
-      success: false,
-      error: 'Missing Required Field',
-    });
+const requireHTTPS = (request, response, next) => {
+  if (request.header('x-forwarded-proto') !== 'https') {
+    return response.redirect(`https://${request.header('host')}${request.url}`);
   }
+  next();
+};
+if (process.env.NODE_ENV === 'production') { app.use(requireHTTPS); }
+
+
+app.get('/api/v1/deepSearch', (request, response) => {
+  return zillow.get('GetDeepSearchResults', request.query)
+    .then(searchedResults => response.status(200).json(searchedResults))
+    .catch(error => console.log(error));
 });
 
-app.get('/api/v1/messageSent', (request, response) => {
-
+app.get('/api/v1/deepComps', (request, response) => {
+  return zillow.get('GetDeepComps', request.query)
+    .then(searchedResults => response.status(200).json(searchedResults))
+    .catch(error => console.log(error));
 });
 
 app.listen(app.get('port'), () => {
@@ -63,4 +50,3 @@ app.listen(app.get('port'), () => {
 });
 
 module.exports = app;
-

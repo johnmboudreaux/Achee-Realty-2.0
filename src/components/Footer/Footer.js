@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col } from 'reactstrap';
+import { Row, Col, Input } from 'reactstrap';
 import ContactForm from '../ContactForm/ContactForm';
 import './Footer.css';
 
