@@ -23,6 +23,7 @@
     "lodash": "^4.17.5",
     "node-sass-chokidar": "0.0.3",
     "node-zillow": "^1.0.1",
+    "nodemailer": "^4.6.7",
     "prop-types": "^15.6.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",

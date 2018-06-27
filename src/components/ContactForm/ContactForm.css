@@ -7,3 +7,9 @@
 .message-input {
     margin-bottom: .5em;
 }
+
+.contact-city {
+    height: 0px;
+    /* background-color: lightslategray; */
+    overflow: hidden;
+}

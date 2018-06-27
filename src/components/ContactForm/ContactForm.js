@@ -54,6 +54,9 @@ class ContactForm extends Component {
                 onChange={this.updateState}
               />
             </div>
+            <div className="contact-city">
+              <input type="text" id="city" value="" placeholder="City" />
+            </div>
             <div className="message-input">
               <textarea
                 name="message"

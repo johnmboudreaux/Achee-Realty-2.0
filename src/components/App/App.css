@@ -81,7 +81,6 @@ h3 {
 /* Form */
 
 input[type='text'],
-input[type='password'],
 input[type='email'],
 textarea {
   -moz-appearance: none;
@@ -104,14 +103,12 @@ textarea {
 }
 
 input[type='text']:focus,
-input[type='password']:focus,
 input[type='email']:focus,
 textarea:focus {
   border-color: #37c0fb;
 }
 
 input[type='text'],
-input[type='password'],
 input[type='email'] {
   line-height: 1em;
 }
