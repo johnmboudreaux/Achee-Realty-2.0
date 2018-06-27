@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Row, Col, Input } from 'reactstrap';
+import { Row, Col } from 'reactstrap';
+import ContactForm from '../ContactForm/ContactForm';
 import './Footer.css';
 
 class Footer extends Component {
@@ -118,42 +119,7 @@ class Footer extends Component {
                 </ul>
               </div>
             </Col>
-            <Col sm={6}>
-              <div className="contact">
-                <h3>Get In Touch</h3>
-                <form>
-                  <div className="footer-contact-name">
-                    <Input
-                      type="text"
-                      name="name"
-                      id="name"
-                      placeholder="Name"
-                    />
-                  </div>
-                  <div className="footer-contact-email">
-                    <Input
-                      type="email"
-                      name="email"
-                      id="email"
-                      placeholder="Email"
-                    />
-                  </div>
-                  <div className="message-input">
-                    <textarea
-                      name="message"
-                      id="message"
-                      placeholder="Message"
-                      rows="5"
-                    />
-                  </div>
-                  <input
-                    type="submit"
-                    className="button"
-                    value="Send Message"
-                  />
-                </form>
-              </div>
-            </Col>
+            <ContactForm />
           </Row>
           <Row>
             <Col sm={12}>

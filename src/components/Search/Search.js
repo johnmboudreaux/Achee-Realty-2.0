@@ -18,7 +18,7 @@ class Search extends Component {
     };
     this.updateState = this.updateState.bind(this);
     this.getPropertyDetails = this.getPropertyDetails.bind(this);
-    this.getPropertyComps = this.getPropertyComps.bind(this);
+    this.getPropertyZPID = this.getPropertyZPID.bind(this);
   }
 
   getPropertyDetails(address, citystatezip) {
@@ -35,21 +35,29 @@ class Search extends Component {
       .catch(error => console.log(error));
   }
 
-  getPropertyComps(dispatch, address, citystatezip) {
-    // this.props.actions.loadPropertyComps(
-    //   this.state.streetAddress,
-    //   this.state.citystatezip,
-    // );
+  getPropertyComps(zpid) {
     return fetch(
-      `/api/v1/deepComps?address=${address}&citystatezip=${citystatezip}`,
+      `/api/v1/deepComps?zpid=${zpid}&count=5`,
     )
       .then(results => results.json())
-      .then(parsedResponse => console.log(parsedResponse))
+      .then(parsedResponse => parsedResponse)
+      .then(listingData => console.log(listingData),
+        // this.props.actions.loadPropertyComps(
+        //   listingData.response.results.result,
+        // ),
+      )
+      .catch(error => console.log(error));
+  }
+
+  getPropertyZPID(address, citystatezip) {
+    return fetch(
+      `/api/v1/deepSearch?address=${address}&citystatezip=${citystatezip}`,
+    )
+      .then(results => results.json())
+      .then(parsedResponse => parsedResponse)
       .then(listingData =>
-        dispatch(
-          this.props.actions.loadPropertyDetailsSuccess(
-            listingData.response.results.result,
-          ),
+        this.props.actions.loadPropertyComps(
+          listingData.response.results.result[0].zpid[0],
         ),
       )
       .catch(error => console.log(error));
@@ -112,7 +120,7 @@ class Search extends Component {
                 name="form_submit"
                 onClick={(e) => {
                   e.preventDefault();
-                  this.getPropertyComps();
+                  this.getPropertyComps(this.getPropertyZPID(this.state.streetAddress, this.state.citystatezip));
                 }}
               />
             </label>
@@ -144,6 +152,7 @@ Search.propTypes = {
 
 const mapStateToProps = (store, ownProps) => ({
   propertyDetails: store.propertyDetails,
+  propertyComps: store.propertyComps,
 });
 
 

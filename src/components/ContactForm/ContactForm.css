@@ -1,0 +1,9 @@
+.footer-contact-name,
+.footer-contact-email {
+    margin: 0 10px 10px 0;
+    width: 50%;
+}
+
+.message-input {
+    margin-bottom: .5em;
+}
