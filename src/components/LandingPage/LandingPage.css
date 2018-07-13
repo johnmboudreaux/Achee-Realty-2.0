@@ -24,7 +24,12 @@
   margin: 10em 0 .5em 0;
 }
 
-.hero-title h2 {
+.hero-title {
+  color: #00135C;  
+}
+
+.hero-title span {
+  font-size: 3em;
 }
 
 /* hero chevron */
