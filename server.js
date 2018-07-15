@@ -7,9 +7,6 @@ const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
 
-// app.set('port', process.env.PORT || 4000);
-// const environment = process.env.NODE_ENV || 'development';
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true,
@@ -73,10 +70,4 @@ app.post('/api/v1/messageReceived', (request, response) => {
 
 app.listen(4000, () => console.log('Achee Realy listening on port 4000!'));
 
-// app.listen(app.get('port'), () => {
-//   console.log(`${app.locals.title} is running on ${app.get('port')}.`);
-// });
-
-
 module.exports = app;
-
