@@ -3,7 +3,7 @@
   background-image: url('../images/hero-image.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  margin-bottom: 30px;
+  margin-bottom: 2em;
 }
 
 .hero-image img {
