@@ -31,7 +31,7 @@ if (process.env.NODE_ENV === 'production') {
 app.post('/api/v1/messageReceived', (request, response) => {
   const data = request.body;
 
-  if (data.name && data.email && data.message) {
+  if (data.name && data.email && data.message && !data.city) {
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
