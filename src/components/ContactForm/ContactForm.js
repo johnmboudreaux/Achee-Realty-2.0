@@ -23,18 +23,14 @@ class ContactForm extends Component {
     };
 
     return fetch('/api/v1/messageReceived', {
-      headers: {
-        // 'Accept': 'application/json, text/plain, */*',
-        'Content-Type': 'application/json',
-      },
       method: 'POST',
       body: JSON.stringify(postBody),
+      headers: { 'Content-Type': 'application/json' },
     })
       .then(result => result.json())
-      .then(parsedResponse => console.log(parsedResponse)
-        .catch(error => console.log('error', error),
-        ),
-      );
+      .then(parsedResponse => parsedResponse)
+      .catch(error => error.json())
+      .then(parsedError => parsedError);
   }
 
   updateState(event) {

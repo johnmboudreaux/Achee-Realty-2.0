@@ -29,17 +29,19 @@ app.post('/api/v1/messageReceived', (request, response) => {
   const data = request.body;
 
   if (data.name && data.email && data.message && !data.city) {
+    console.log(data);
+
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: 'johnmboudreaux@gmail.com',
-        pass: '',
+        user: 'acheerealtyservices@gmail.com',
+        pass: 'CherylSue58',
       },
     });
 
     const mailOptions = {
-      from: 'johnmboudreaux@gmail.com',
-      to: 'johnmboudreaux@gmail.com',
+      from: 'acheerealtyservices@gmail.com',
+      to: 'acheerealtyservices@gmail.com',
       subject: 'New Request From Achee Realty App',
       text: `Name: ${data.name} \n
               Email: ${data.email} \n
