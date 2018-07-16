@@ -49,18 +49,18 @@ app.post('/api/v1/messageReceived', (request, response) => {
       if (error) {
         console.log(error);
       } else {
-        res.status(201).json({
+        response.status(201).json({
           success: true,
         });
       }
     });
   } else if (data.City) {
-    res.status(406).json({
+    response.status(406).json({
       success: false,
       error: 'Bot Detected',
     });
   } else {
-    res.status(406).json({
+    response.status(406).json({
       success: false,
       error: 'Missing Required Field',
     });

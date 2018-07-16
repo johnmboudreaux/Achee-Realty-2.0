@@ -12,6 +12,7 @@ class ContactForm extends Component {
     };
     this.updateState = this.updateState.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.clearState = this.clearState.bind(this);
   }
 
   handleClick(event) {
@@ -28,7 +29,10 @@ class ContactForm extends Component {
       headers: { 'Content-Type': 'application/json' },
     })
       .then(result => result.json())
-      .then(parsedResponse => parsedResponse)
+      .then((parsedResponse) => {
+        this.clearState();
+        return parsedResponse;
+      })
       .catch(error => error.json())
       .then(parsedError => parsedError);
   }
@@ -36,6 +40,16 @@ class ContactForm extends Component {
   updateState(event) {
     this.setState({
       [event.target.name]: event.target.value,
+    });
+  }
+
+  clearState() {
+    console.log('clearstate');
+
+    return this.setState({
+      name: '',
+      email: '',
+      message: '',
     });
   }
 
