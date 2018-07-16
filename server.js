@@ -14,7 +14,6 @@ app.use(bodyParser.urlencoded({
 
 app.use(express.static('src'));
 
-
 const requireHTTPS = (request, response, next) => {
   if (request.header('x-forwarded-proto') !== 'https') {
     return response.redirect(`https://${request.header('host')}${request.url}`);
@@ -29,13 +28,11 @@ app.post('/api/v1/messageReceived', (request, response) => {
   const data = request.body;
 
   if (data.name && data.email && data.message && !data.city) {
-    console.log(data);
-
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
         user: 'acheerealtyservices@gmail.com',
-        pass: 'CherylSue58',
+        pass: process.env.EMAIL_KEY,
       },
     });
 
@@ -70,6 +67,6 @@ app.post('/api/v1/messageReceived', (request, response) => {
   }
 });
 
-app.listen(4000, () => console.log('Achee Realy listening on port 4000!'));
+app.listen(4000, () => console.log('Achee Realty listening on port 4000!'));
 
 module.exports = app;
