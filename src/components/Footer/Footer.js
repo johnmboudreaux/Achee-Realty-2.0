@@ -101,7 +101,7 @@ class Footer extends Component {
                       Whats Happening in Ascension?
                     </a>
                   </li>
-                  <li>
+                  {/* <li>
                     <a href="">Rutrum accumsan sed</a>
                   </li>
                   <li>
@@ -115,7 +115,7 @@ class Footer extends Component {
                   </li>
                   <li>
                     <a href="">Rutrum amet varius</a>
-                  </li>
+                  </li> */}
                 </ul>
               </div>
             </Col>

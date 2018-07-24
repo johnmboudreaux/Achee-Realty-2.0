@@ -6,26 +6,19 @@
   margin-bottom: 2em;
 }
 
-.hero-image img {
-  position: absolute;
-  top: 31%;
-  left: 10%;
-  height: 350px;
-  width: 275px;
-}
-
 .darken-overlay div {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
 .hero-title {
-  color: #fff;
+  color: #fff;  
   font-size: 2em;
   margin: 10em 0 .5em 0;
 }
 
-.hero-title {
-  color: #00135C;  
+.hero-title img {
+  color: #fff;
+  vertical-align: baseline;
 }
 
 .hero-title span {

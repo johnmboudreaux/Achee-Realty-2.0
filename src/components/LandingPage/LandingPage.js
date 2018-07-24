@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import Scrollchor from 'react-scrollchor';
-import logo from '../images/achee-logo.png';
+import logo from '../images/achee-logo (1).svg';
 import './LandingPage.css';
 import MonthlyInfo from '../MonthlyInfo/MonthlyInfo';
 
@@ -17,7 +17,7 @@ class LandingPage extends Component {
             </section>
             <section id="hero-chevron" className="demo">
               <Scrollchor
-                to="autoPlay"
+                to="blog-title"
                 onClick={this.scrolling}
                 href="#scrolling-images"
               >
