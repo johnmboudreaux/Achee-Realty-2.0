@@ -21,6 +21,7 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    height: 50vh;
     flex: 3;
+    height: 50vh;
+    margin-left: .5em;
 }

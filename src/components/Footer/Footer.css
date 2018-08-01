@@ -1,8 +1,8 @@
 
 #footer {
     background-color: lightslategray;
-    padding: 4em 0 8em 0;
-    margin-bottom: 4em;
+    padding: 4em 0 1em 0;
+    /* margin-bottom: 4em; */
 }
 
 #footer a {
@@ -85,4 +85,6 @@
   list-style-type: none;
 }
 
+@media screen and (max-width: 400px) {
 
+}

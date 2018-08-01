@@ -1,0 +1,126 @@
+.small-nav {
+  /*visibility: hidden;*/
+}
+.hero {
+    height: 100vh;
+    background-image: url('../images/hero-image.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 2em;
+}
+
+.darken-overlay {
+    background-color: rgba(0, 0, 0, 0.2);
+    height: 100%;
+    position: relative;
+}
+
+.hero-title {
+    color: #222;
+    /*position: absolute;
+    top: 40em;
+    left: 43em;*/
+    font-size: .7em;
+}
+
+.hero-title img {
+  height: 3em;
+  vertical-align: baseline;
+}
+
+.hero-title h3,
+.hero-title h2 {
+    font-size: 1em;
+    margin-left: 2em;
+}
+
+/* hero chevron */
+
+#hero-chevron {
+    position: absolute;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    text-align: center;
+}
+
+#hero-chevron a span {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 35px;
+    height: 35px;
+    margin-left: -12px;
+    border-left: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    -webkit-animation: sdb07 2s infinite;
+    animation: sdb07 2s infinite;
+    opacity: 0;
+    box-sizing: border-box;
+}
+
+#hero-chevron a span:nth-of-type(1) {
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s;
+}
+
+#hero-chevron a span:nth-of-type(2) {
+    top: 20%;
+    -webkit-animation-delay: 0.15s;
+    animation-delay: 0.15s;
+}
+
+#hero-chevron a span:nth-of-type(3) {
+    top: 40%;
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s;
+}
+
+@-webkit-keyframes sdb07 {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes sdb07 {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width: 820px) {
+  .hero-title {
+    top: 9em;
+    left: 22em;
+  }
+}
+
+@media screen and (max-width: 400px) {
+
+  .blog-image,
+  #hero-chevron {
+    display: none;
+  }
+
+  .hero {
+    height: 9vh;
+  }
+
+  .small-nav {
+    /*visibility: visible;*/
+  }
+}
