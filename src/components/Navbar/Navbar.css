@@ -1,3 +1,36 @@
-.niggity {
+.navbar {
+  background-color: lightgrey!important;
+  visibility: hidden;
+}
+
+.nav-link {
+  color: #222;
+}
+
+.contact-button {
   background-color: lightgrey;
+  border-radius: 5px;
+  border-bottom: none;
+  color: #222;
+  padding: .5em;
+  transition: all .2s ease-in;
+}
+
+.contact-button:hover {
+  background-color: #37c0fb;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 400px) {
+  #hero-chevron {
+    display: none;
+  }
+
+  .hero {
+    height: 9vh;
+  }
+
+  .navbar {
+    visibility: visible;
+  }
 }

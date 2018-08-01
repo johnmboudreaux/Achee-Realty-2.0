@@ -1,6 +1,3 @@
-.small-nav {
-  /*visibility: hidden;*/
-}
 .hero {
     height: 100vh;
     background-image: url('../images/hero-image.jpg');
@@ -110,17 +107,11 @@
 }
 
 @media screen and (max-width: 400px) {
-
-  .blog-image,
   #hero-chevron {
     display: none;
   }
 
   .hero {
     height: 9vh;
-  }
-
-  .small-nav {
-    /*visibility: visible;*/
   }
 }

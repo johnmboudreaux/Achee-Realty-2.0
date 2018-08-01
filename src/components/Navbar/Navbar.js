@@ -12,6 +12,7 @@ import {
   DropdownMenu,
   DropdownItem,
 } from 'reactstrap';
+import './Navbar.css';
 import logo from '../images/achee-logo (1).svg';
 
 class NavLinks extends Component {
@@ -31,9 +32,9 @@ class NavLinks extends Component {
 
   render() {
     return (
-      <div>
-        <Navbar className="small-nav" color="light" expand="md">
-          <NavbarBrand href="/">
+      <div className="small-nav">
+        <Navbar color="light" expand="md">
+          <NavbarBrand>
             <section className="hero-title">
               <div>
                 <h2>
@@ -45,10 +46,11 @@ class NavLinks extends Component {
               </div>
             </section>
           </NavbarBrand>
+          <button href="" className="contact-button">Contact Us</button>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
-              <NavItem>
+              <NavItem className="nav-item">
                 <NavLink href="/components/">Components</NavLink>
               </NavItem>
               <NavItem>

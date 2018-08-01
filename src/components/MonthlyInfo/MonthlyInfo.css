@@ -25,3 +25,14 @@
     height: 50vh;
     margin-left: .5em;
 }
+
+@media screen and (max-width: 400px) {
+  .blog-image {
+    display: none;
+  }
+
+  .monthly-blog {
+    padding: 1em;
+  }
+
+}
