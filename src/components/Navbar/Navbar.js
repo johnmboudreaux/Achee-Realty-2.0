@@ -30,6 +30,12 @@ class NavLinks extends Component {
     });
   }
 
+  scrollToBottom() {
+    document.querySelector('#footer').scrollIntoView({
+      behavior: 'smooth',
+    });
+  }
+
   render() {
     return (
       <div className="small-nav">
@@ -46,7 +52,7 @@ class NavLinks extends Component {
               </div>
             </section>
           </NavbarBrand>
-          <button href="" className="contact-button">Contact Us</button>
+          <button href="" className="contact-button" onClick={this.scrollToBottom}>Contact Us</button>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
