@@ -1,6 +1,6 @@
 import React from 'react';
 import Scrollchor from 'react-scrollchor';
-import logo from '../images/achee-logo (1).svg';
+import logoa from '../images/achee-logo (1).svg';
 import Navbar from '../Navbar/Navbar';
 import './Hero.css';
 
@@ -9,16 +9,16 @@ const Hero = () => {
     <div className=" hero">
       <div className="darken-overlay">
         <Navbar />
-        {/* <section className="hero-title">
+        <section className="hero-title-a">
           <div>
             <h2>
               <span>
-                <img src={logo} alt="fancy a" />
+                <img src={logoa} alt="fancy a" />
               </span>CHEE REALTY SERVICES
             </h2>
             <h3>“Service Beyond The Sale”</h3>
           </div>
-        </section> */}
+        </section>
         <section id="hero-chevron" className="demo">
           <Scrollchor
             to="blog-title"

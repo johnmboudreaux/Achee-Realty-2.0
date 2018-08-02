@@ -13,7 +13,7 @@ import {
   DropdownItem,
 } from 'reactstrap';
 import './Navbar.css';
-import logo from '../images/achee-logo (1).svg';
+import logo from '../images/achee-logo (2).svg';
 
 class NavLinks extends Component {
   constructor(props) {
@@ -41,7 +41,7 @@ class NavLinks extends Component {
       <div className="small-nav">
         <Navbar color="light" expand="md">
           <NavbarBrand>
-            <section className="hero-title">
+            <section className="hero-title-b">
               <div>
                 <h2>
                   <span>
@@ -50,10 +50,10 @@ class NavLinks extends Component {
                 </h2>
                 <h3>“Service Beyond The Sale”</h3>
               </div>
+              <button href="" className="contact-button" onClick={this.scrollToBottom}>Contact Us</button>
             </section>
           </NavbarBrand>
-          <button href="" className="contact-button" onClick={this.scrollToBottom}>Contact Us</button>
-          <NavbarToggler onClick={this.toggle} />
+          {/* <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem className="nav-item">
@@ -80,7 +80,7 @@ class NavLinks extends Component {
                 </DropdownMenu>
               </UncontrolledDropdown>
             </Nav>
-          </Collapse>
+          </Collapse> */}
         </Navbar>
       </div>
     );
