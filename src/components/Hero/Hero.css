@@ -13,10 +13,10 @@
 }
 
 .hero-title-a {
-  color: #fff;
+  color: #000;
   position: absolute;
-  top: 40em;
-  left: 43em;
+  bottom: 1em;
+  left: 5em;
   font-size: .7em;
 }
 
@@ -25,10 +25,9 @@
   vertical-align: baseline;
 }
 
-.hero-title h3,
-.hero-title h2 {
-  font-size: 1em;
-  margin-left: 2em;
+.hero-title-a h3,
+.hero-title-a h2 {
+  font-size: 3em;
 }
 
 /* hero chevron */

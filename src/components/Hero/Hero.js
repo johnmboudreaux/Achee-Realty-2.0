@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Scrollchor from 'react-scrollchor';
 import logoa from '../images/achee-logo (1).svg';
 import Navbar from '../Navbar/Navbar';
 import './Hero.css';
@@ -29,6 +28,7 @@ class Hero extends Component {
                 </span>CHEE REALTY SERVICES
               </h2>
               <h3>“Service Beyond The Sale”</h3>
+              <h4>Gonzales, LA</h4>
             </div>
           </section>
           <section
