@@ -91,7 +91,7 @@ class ContactForm extends Component {
             </div>
             <input
               type="submit"
-              className="button"
+              className="form-button"
               value="Send Message"
               onClick={this.handleClick}
             />

@@ -12,7 +12,9 @@
   border-radius: 5px;
   border-bottom: none;
   color: #222;
+  height: 4em;
   padding: .5em;
+  margin-top: .5em;
   transition: all .2s ease-in;
 }
 
@@ -22,6 +24,7 @@
 }
 
 .hero-title-b {
+  display: flex;
   color: #222;
   font-size: .7em;
 }
@@ -31,9 +34,10 @@
   vertical-align: baseline;
 }
 
-
-.hero-title-b {
-  font-size: .7em;
+.hero-title-b h3,
+.hero-title-b h2 {
+  font-size: 1em;
+  margin-right: 6em;
 }
 
 @media screen and (max-width: 400px) {
