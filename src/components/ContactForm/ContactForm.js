@@ -44,8 +44,6 @@ class ContactForm extends Component {
   }
 
   clearState() {
-    console.log('clearstate');
-
     return this.setState({
       name: '',
       email: '',
@@ -105,4 +103,3 @@ class ContactForm extends Component {
 }
 
 export default ContactForm;
-
