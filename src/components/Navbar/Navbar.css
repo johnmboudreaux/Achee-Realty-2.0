@@ -1,6 +1,7 @@
 header {
   width: 100%;
 }
+
 .hamburger {
   background: none;
   color: #fff;
@@ -108,4 +109,20 @@ span {
 
 a {
   color:#336699;
+}
+
+@media screen and (max-width: 820px) {
+  .menu ul a li {
+    background-color: blue;
+  }
+}
+
+@media screen and (max-width: 400px) {
+    .menu ul a li {
+      background-color: grey;
+    }
+    
+    .hero {
+      overflow-y: scroll;
+    }
 }

@@ -9,7 +9,7 @@
 
 .darken-overlay {
     background-color: rgba(0, 0, 0, 0.2);
-    height: 100%;
+    height: 100vh;
     position: relative;
 }
 
@@ -117,8 +117,13 @@
     }
 
     .hero {
-        height: 0;
+        background-image: url('../images/porch.jpg');
+        height: 15em;
         margin-bottom: 0;
+    }
+
+    .darken-overlay {
+        height: 47vh;
     }
 
     .hero-title-a,

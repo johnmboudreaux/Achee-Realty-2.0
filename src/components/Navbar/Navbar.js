@@ -57,7 +57,7 @@ class NavBar extends Component {
 
         <div id="link_menu" className="menu">
           <ul>
-            <a href="#"><li>LINK ONE</li></a>
+            <a href="#"><li>CURRENT LISTINGS</li></a>
             <a href="#"><li>LINK TWO</li></a>
             <a href="#"><li>LINK THREE</li></a>
             <a href="#"><li>LINK FOUR</li></a>
