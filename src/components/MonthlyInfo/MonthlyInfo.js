@@ -5,8 +5,8 @@ import './MonthlyInfo.css';
 
 const MonthlyInfo = () => {
   return (
-    <div className="monthly-blog">
-      <div className="blog-title" id="">
+    <div className="monthly-blog" id="blog-scroll">
+      <div className="blog-title">
         <header>5 Tips For Surviving A Move</header>
       </div>
       <div className="blog-contents">

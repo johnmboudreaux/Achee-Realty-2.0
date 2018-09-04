@@ -1,90 +1,72 @@
 import React, { Component } from 'react';
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-} from 'reactstrap';
+import logo from '../images/achee-logo (1).svg';
 import './Navbar.css';
-import logo from '../images/achee-logo (2).svg';
 
-class NavLinks extends Component {
+class NavBar extends Component {
   constructor(props) {
     super(props);
-    this.toggle = this.toggle.bind(this);
     this.state = {
-      isOpen: false,
+      menuOpen: false,
     };
+    this.toggleMenu = this.toggleMenu.bind(this);
   }
 
-  toggle() {
-    this.setState({
-      isOpen: !this.state.isOpen,
-    });
-  }
-
-  scrollToBottom() {
-    document.querySelector('#footer').scrollIntoView({
-      behavior: 'smooth',
-    });
+  toggleMenu() {
+    if (this.state.menuOpen === false) {      
+      this.setState({ menuOpen: true });
+      document.getElementById('link_menu').style.display = 'block';
+      document.getElementById('hamburger_icon').style.display = 'none';
+      document.getElementById('cross_icon').style.display = 'block';
+    }
+    if (this.state.menuOpen === true) {
+      this.setState({ menuOpen: false });
+      document.getElementById('link_menu').style.display = 'none';
+      document.getElementById('hamburger_icon').style.display = 'block';
+      document.getElementById('cross_icon').style.display = 'none';
+    }
   }
 
   render() {
     return (
-      <div className="small-nav">
-        <Navbar color="light" expand="md">
-          <NavbarBrand>
-            <section className="hero-title-b">
-              <div>
-                <h2>
-                  <span>
-                    <img src={logo} alt="fancy a" />
-                  </span>CHEE REALTY SERVICES
-                </h2>
-                <h3>“Service Beyond The Sale”</h3>
-              </div>
-              <button href="" className="contact-button" onClick={this.scrollToBottom}>Contact Us</button>
-            </section>
-          </NavbarBrand>
-          {/* <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
-              <NavItem className="nav-item">
-                <NavLink href="/components/">Components</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
-              </NavItem>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  Options
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>
-                    Option 1
-                  </DropdownItem>
-                  <DropdownItem>
-                    Option 2
-                  </DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>
-                    Reset
-                  </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
-            </Nav>
-          </Collapse> */}
-        </Navbar>
+      <div>
+        <header>
+          <section className="hero-title-a">
+            <div>
+              <h2>
+                <span>
+                  <img src={logo} alt="fancy a" />
+                </span>CHEE REALTY SERVICES
+              </h2>
+              <h3>“Service Beyond The Sale”</h3>
+              {/* <h4>Gonzales, LA</h4> */}
+            </div>
+          </section>
+          <button
+            id="hamburger_icon"
+            className="hamburger"
+            onClick={this.toggleMenu}
+          >&#9776;
+          </button>
+          <button
+            id="cross_icon"
+            className="cross"
+            onClick={this.toggleMenu}
+          >&#735;
+          </button>
+        </header>
+
+        <div id="link_menu" className="menu">
+          <ul>
+            <a href="#"><li>LINK ONE</li></a>
+            <a href="#"><li>LINK TWO</li></a>
+            <a href="#"><li>LINK THREE</li></a>
+            <a href="#"><li>LINK FOUR</li></a>
+            <a href="#"><li>LINK FIVE</li></a>
+          </ul>
+        </div>
       </div>
     );
   }
 }
 
-export default NavLinks;
+export default NavBar;

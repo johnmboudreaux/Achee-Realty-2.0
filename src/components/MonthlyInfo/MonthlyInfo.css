@@ -1,9 +1,13 @@
+.monthly-blog {
+    margin: 9em 0;
+}
+
 .blog-title {
     display: flex;
     justify-content: center;
     font-size: 2em;
     font-weight: bold;
-    margin-bottom: .7em;
+    margin: 0 0 .7em .2em;
 }
 
 .blog-contents {
