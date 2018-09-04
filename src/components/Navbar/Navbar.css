@@ -1,5 +1,7 @@
 header {
   width: 100%;
+  display: inline-block;
+  font-size: 12px;
 }
 
 .hamburger {
@@ -98,11 +100,6 @@ header {
   color:#666;
 }
 
-header {
-  display: inline-block; 
-  font-size: 12px;
-}
-
 span {
   padding-left: 1em;
 }
@@ -112,8 +109,8 @@ a {
 }
 
 @media screen and (max-width: 820px) {
-  .menu ul a li {
-    background-color: blue;
+    .menu ul a li {
+      background-color: blue;
   }
 }
 

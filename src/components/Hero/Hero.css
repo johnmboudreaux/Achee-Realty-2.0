@@ -33,6 +33,10 @@
     margin-left: 2em;
 }
 
+.hero-title-a span {
+    padding: 0;
+}
+
 /* hero chevron */
 
 #hero-chevron {
@@ -126,8 +130,19 @@
         height: 47vh;
     }
 
-    .hero-title-a,
-    .hero-title-a img {
+    .hero-title-a h3 {
         display: none;
+    }
+
+    .hero-title-a h2 {
+        font-size: 1.75em;
+    }
+
+    .hero-title-a img {
+        margin-left: 1em;
+    }
+
+    .hero-title-a span:nth-child(2) {
+        font-size: .8em;
     }
 }

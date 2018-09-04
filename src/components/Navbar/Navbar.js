@@ -35,7 +35,10 @@ class NavBar extends Component {
               <h2>
                 <span>
                   <img src={logo} alt="fancy a" />
-                </span>CHEE REALTY SERVICES
+                </span>
+                <span>
+                  CHEE REALTY SERVICES
+                </span>
               </h2>
               <h3>“Service Beyond The Sale”</h3>
               {/* <h4>Gonzales, LA</h4> */}
