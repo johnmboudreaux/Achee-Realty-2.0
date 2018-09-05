@@ -1,0 +1,30 @@
+/* .about-me {
+    height: 100%;
+    width: 100%;
+}
+
+.about-me-img {
+    height: 100vh;
+    background-image: url("../images/adrian.JPG");
+    background-size: cover;
+    background-position: center center;
+    transform: rotate(90deg);
+} */
+
+.col-sm-8 {
+    padding-right: 0;
+}
+
+.image {
+    background-image: url('../images/fleur-de-lis.jpg');
+    background-position: center center;
+    background-size: contain;
+    height: 15em;
+    margin-top: 5em;
+}
+
+.text-body {
+    margin-top: 5em;
+    height: 30em;
+    background-color: red;
+}

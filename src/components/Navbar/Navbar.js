@@ -60,11 +60,11 @@ class NavBar extends Component {
 
         <div id="link_menu" className="menu">
           <ul>
+            <a href="/AboutMe"><li>ABOUT ME</li></a>
             <a href="#"><li>CURRENT LISTINGS</li></a>
-            <a href="#"><li>LINK TWO</li></a>
-            <a href="#"><li>LINK THREE</li></a>
-            <a href="#"><li>LINK FOUR</li></a>
-            <a href="#"><li>LINK FIVE</li></a>
+            <a href="#"><li>RECENTLY CLOSED</li></a>
+            <a href="#"><li>NEW TO THE MARKET</li></a>
+            <a href="#footer"><li>LETS CHAT</li></a>
           </ul>
         </div>
       </div>
