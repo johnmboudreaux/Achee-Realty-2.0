@@ -13,32 +13,6 @@
     position: relative;
 }
 
-.hero-title-a {
-    color: #F4F95C;
-    /* color: #fff; */
-    font-size: .7em;
-    margin-top: 1em;
-}
-
-.hero-title-a img {
-    height: 3em;
-    vertical-align: baseline;
-}
-
-.hero-title-a h3,
-.hero-title-a h2 {
-    font-size: 2.5em;
-}
-
-.hero-title-a h3 {
-    margin-left: 2em;
-}
-
-.hero-title-a span {
-    padding: 0;
-}
-
-/* hero chevron */
 
 #hero-chevron {
     position: absolute;

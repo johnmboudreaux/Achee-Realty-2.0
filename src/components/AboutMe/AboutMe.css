@@ -10,6 +10,7 @@
     background-image: url('../images/fleur-de-lis.jpg');
     background-position: center center;
     background-size: contain;
+    background-repeat: no-repeat;
     height: 15em;
     margin-top: 5em;
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'reactstrap';
-import logo from '../images/achee-logo (1).svg';
+import logo from '../images/achee-logo.svg';
 import './Navbar.css';
 
 class NavBar extends Component {
@@ -33,16 +33,16 @@ class NavBar extends Component {
         <header>
           <Row>
             <Col sm={6}>
-              <section className="hero-title-a">
+              <section className="nav-title">
                 <div>
-                  <h2>
+                  <a href="/">
                     <span>
                       <img src={logo} alt="fancy a" />
                     </span>
                     <span>
                       CHEE REALTY SERVICES
                     </span>
-                  </h2>
+                  </a>
                   <h3>“Service Beyond The Sale”</h3>
                   {/* <h4>Gonzales, LA</h4> */}
                 </div>
@@ -68,6 +68,7 @@ class NavBar extends Component {
                   <a href="#"><li>RECENTLY CLOSED</li></a>
                   <a href="#"><li>NEW TO THE MARKET</li></a>
                   <a href="#footer"><li>LETS CHAT</li></a>
+                  <a href="/"><li>HOME</li></a>
                 </ul>
               </div>
             </Col>
