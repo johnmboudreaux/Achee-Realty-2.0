@@ -36,8 +36,7 @@ a {
 }
 
 a:hover {
-  color: #37c0fb;
-  border-bottom-color: transparent;
+  text-decoration: none;
 }
 
 h1,
