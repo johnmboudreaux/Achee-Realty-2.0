@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Row, Col } from 'reactstrap';
 import logo from '../images/achee-logo (1).svg';
 import './Navbar.css';
 
@@ -28,45 +29,51 @@ class NavBar extends Component {
 
   render() {
     return (
-      <div>
+      <div className="navBar-wrapper">
         <header>
-          <section className="hero-title-a">
-            <div>
-              <h2>
-                <span>
-                  <img src={logo} alt="fancy a" />
-                </span>
-                <span>
-                  CHEE REALTY SERVICES
-                </span>
-              </h2>
-              <h3>“Service Beyond The Sale”</h3>
-              {/* <h4>Gonzales, LA</h4> */}
-            </div>
-          </section>
-          <button
-            id="hamburger_icon"
-            className="hamburger"
-            onClick={this.toggleMenu}
-          >&#9776;
-          </button>
-          <button
-            id="cross_icon"
-            className="cross"
-            onClick={this.toggleMenu}
-          >&#735;
-          </button>
+          <Row>
+            <Col sm={6}>
+              <section className="hero-title-a">
+                <div>
+                  <h2>
+                    <span>
+                      <img src={logo} alt="fancy a" />
+                    </span>
+                    <span>
+                      CHEE REALTY SERVICES
+                    </span>
+                  </h2>
+                  <h3>“Service Beyond The Sale”</h3>
+                  {/* <h4>Gonzales, LA</h4> */}
+                </div>
+              </section>
+            </Col>
+            <Col sm={6}>
+              <button
+                id="hamburger_icon"
+                className="hamburger"
+                onClick={this.toggleMenu}
+              >&#9776;
+              </button>
+              <button
+                id="cross_icon"
+                className="cross"
+                onClick={this.toggleMenu}
+              >&#735;
+              </button>
+              <div id="link_menu" className="menu">
+                <ul>
+                  <a href="/AboutMe"><li>ABOUT ME</li></a>
+                  <a href="#"><li>CURRENT LISTINGS</li></a>
+                  <a href="#"><li>RECENTLY CLOSED</li></a>
+                  <a href="#"><li>NEW TO THE MARKET</li></a>
+                  <a href="#footer"><li>LETS CHAT</li></a>
+                </ul>
+              </div>
+            </Col>
+          </Row>
         </header>
 
-        <div id="link_menu" className="menu">
-          <ul>
-            <a href="/AboutMe"><li>ABOUT ME</li></a>
-            <a href="#"><li>CURRENT LISTINGS</li></a>
-            <a href="#"><li>RECENTLY CLOSED</li></a>
-            <a href="#"><li>NEW TO THE MARKET</li></a>
-            <a href="#footer"><li>LETS CHAT</li></a>
-          </ul>
-        </div>
       </div>
     );
   }

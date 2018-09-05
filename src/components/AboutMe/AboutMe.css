@@ -1,18 +1,9 @@
-/* .about-me {
-    height: 100%;
-    width: 100%;
-}
-
-.about-me-img {
-    height: 100vh;
-    background-image: url("../images/adrian.JPG");
-    background-size: cover;
-    background-position: center center;
-    transform: rotate(90deg);
-} */
-
 .col-sm-8 {
     padding-right: 0;
+}
+
+.navBar-wrapper {
+    width: 100%;
 }
 
 .image {
@@ -25,6 +16,10 @@
 
 .text-body {
     margin-top: 5em;
-    height: 30em;
+    height: 28em;
     background-color: #c9cbc8;
+}
+
+.text-body div {
+    padding-top: 3em;
 }
