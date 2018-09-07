@@ -7,18 +7,26 @@
 }
 
 .image {
-    background-image: url('../images/fleur-de-lis.jpg');
+    background-image: url('../images/porch-swing.jpg');
     background-position: center center;
     background-size: contain;
     background-repeat: no-repeat;
-    height: 15em;
-    margin-top: 5em;
+    height: 13.5em;
+    width: 100%;
+    margin-top: 6em;
+}
+
+video#grass-vid {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: relative;
 }
 
 .text-body {
     margin-top: 5em;
     height: 28em;
-    background-color: #c9cbc8;
 }
 
 .text-body div {

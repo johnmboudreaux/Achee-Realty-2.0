@@ -7,23 +7,22 @@ class NavBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      menuOpen: false,
+      menuShowing: false,
     };
     this.toggleMenu = this.toggleMenu.bind(this);
   }
 
   toggleMenu() {
-    if (this.state.menuOpen === false) {      
-      this.setState({ menuOpen: true });
-      document.getElementById('link_menu').style.display = 'block';
-      document.getElementById('hamburger_icon').style.display = 'none';
-      document.getElementById('cross_icon').style.display = 'block';
-    }
-    if (this.state.menuOpen === true) {
-      this.setState({ menuOpen: false });
-      document.getElementById('link_menu').style.display = 'none';
-      document.getElementById('hamburger_icon').style.display = 'block';
-      document.getElementById('cross_icon').style.display = 'none';
+    if (!this.state.menuShowing) {
+      document.querySelector('.menu-btn').classList.add('close');
+      document.querySelector('.menu').style.right = '.5em';
+
+      this.state.menuShowing = true;
+    } else {
+      document.querySelector('.menu-btn').classList.remove('close');
+      document.querySelector('.menu').style.right = '-30em';
+
+      this.state.menuShowing = false;
     }
   }
 
@@ -49,18 +48,17 @@ class NavBar extends Component {
               </section>
             </Col>
             <Col sm={6}>
-              <button
-                id="hamburger_icon"
-                className="hamburger"
+              <div
                 onClick={this.toggleMenu}
-              >&#9776;
-              </button>
-              <button
-                id="cross_icon"
-                className="cross"
-                onClick={this.toggleMenu}
-              >&#735;
-              </button>
+                onKeyPress={this.toggleMenu}
+                className="menu-btn"
+                role="button"
+                tabIndex={0}
+              >
+                <div className="btn-line" />
+                <div className="btn-line" />
+                <div className="btn-line" />
+              </div>
               <div id="link_menu" className="menu">
                 <ul>
                   <a href="/AboutMe"><li>ABOUT ME</li></a>

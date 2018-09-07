@@ -35,6 +35,11 @@
           "some": [ "nesting", "id" ]
       },
       "allowChildren": false
-  }]
+    }],
+    "jsx-a11y/media-has-caption": [2, {
+      "audio": ["Audio"],
+      "video": ["Video"],
+      "track": ["Track"]
+    }]
   }
 }

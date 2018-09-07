@@ -7,6 +7,11 @@ import './AboutMe.css';
 const AboutMe = () => {
   return (
     <div className="about-me-wrapper">
+      {/* <video id="grass-vid" autoPlay loop muted>
+        <track kind="captions" />
+        <source src="../images/sunrise-vid.mp4" type="video/mp4" />
+        <source src="../images/sunrise-vid.webm" type="video/webm" />
+      </video> */}
       <div className="container-fluid">
         <Row>
           <Navbar />
