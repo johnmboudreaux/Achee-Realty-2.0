@@ -8,7 +8,7 @@ import './LandingPage.css';
 class LandingPage extends Component {
   render() {
     return (
-      <div>
+      <div className="landing-page">
         <Hero />
         <MonthlyInfo />
         <Footer />

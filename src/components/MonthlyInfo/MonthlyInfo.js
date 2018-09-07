@@ -1,5 +1,4 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import './MonthlyInfo.css';
 
@@ -34,7 +33,5 @@ const MonthlyInfo = () => {
     </div>
   );
 };
-
-// MonthlyInfo.propTypes = {};
 
 export default withRouter(MonthlyInfo);

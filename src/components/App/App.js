@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import LandingPage from '../LandingPage/LandingPage';
 import AboutMe from '../AboutMe/AboutMe';
-// import Search from '../Search/Search';
 import './App.css';
 
 class App extends Component {

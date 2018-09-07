@@ -15,12 +15,12 @@ class NavBar extends Component {
   toggleMenu() {
     if (!this.state.menuShowing) {
       document.querySelector('.menu-btn').classList.add('close');
-      document.querySelector('.menu').style.right = '.5em';
+      document.querySelector('.menu').style.opacity = 0.9;
 
       this.state.menuShowing = true;
     } else {
       document.querySelector('.menu-btn').classList.remove('close');
-      document.querySelector('.menu').style.right = '-40em';
+      document.querySelector('.menu').style.opacity = 0;
 
       this.state.menuShowing = false;
     }
@@ -31,7 +31,7 @@ class NavBar extends Component {
       <div className="navBar-wrapper">
         <header>
           <Row>
-            <Col sm={6}>
+            <Col className="container-flush"sm={6}>
               <section className="nav-title">
                 <div>
                   <a href="/">

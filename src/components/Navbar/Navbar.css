@@ -92,13 +92,14 @@ header {
   font-size: 1em;
   position: absolute;
   top: 6em;
-  right: -40em;
+  right: .5em;
   margin-right: 2.4em;
-  opacity: 0.9;
+  opacity: 0;
   text-align: center;
   width: 75%;
   z-index: 1000000;
-  transition: right .9s linear;
+  transition: opacity 0.5s;
+  -webkit-transition: opacity 0.5s;
 }
 
 .menu ul {
