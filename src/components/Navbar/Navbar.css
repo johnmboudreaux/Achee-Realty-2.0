@@ -53,29 +53,29 @@ header {
 }
 
 .menu-btn {
-  position: absolute;
-  top: 35px;
-  right: 35px;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  z-index: 3;
   cursor: pointer;
+  position: absolute;
+  top: 2rem;
+  right: 3rem;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   transition: all .8s ease-out;
+  z-index: 3;
+}
+
+.btn-line {
+  border: .5px solid black;
 }
 
 .menu-btn .btn-line {
   width: 28px;
-  height: 3px;
+  height: 4px;
   margin: 0 0 5px 0;
   background: #E9D758;
   transition: all .8s ease-out;
 }
 
-.menu-btn .btn-line:hover {
-  background: #c9c094;
-}
-
 .menu-btn.close .btn-line:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+  transform: rotate(45deg) translate(7px, 6px);
 }
 
 .menu-btn.close .btn-line:nth-child(2) {
@@ -92,7 +92,7 @@ header {
   font-size: 1em;
   position: absolute;
   top: 6em;
-  right: -30em;
+  right: -40em;
   margin-right: 2.4em;
   opacity: 0.9;
   text-align: center;
