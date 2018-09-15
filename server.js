@@ -8,9 +8,11 @@ const path = require('path');
 const bodyParser = require('body-parser');
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-  extended: true,
-}));
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  }),
+);
 
 app.use(express.static('src'));
 
@@ -41,8 +43,8 @@ app.post('/api/v1/messageReceived', (request, response) => {
       to: 'acheerealtyservices@gmail.com',
       subject: 'New Request From Achee Realty App',
       text: `Name: ${data.name} \n
-              Email: ${data.email} \n
-              Message: ${data.message} \n`,
+             Email: ${data.email} \n
+             Message: ${data.message} \n`,
     };
 
     transporter.sendMail(mailOptions, (error, info) => {

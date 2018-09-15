@@ -16,13 +16,11 @@ class NavBar extends Component {
     if (!this.state.menuShowing) {
       document.querySelector('.menu-btn').classList.add('close');
       document.querySelector('.menu').style.opacity = 0.9;
-
-      this.state.menuShowing = true;
+      this.setState({ menuShowing: true });
     } else {
       document.querySelector('.menu-btn').classList.remove('close');
       document.querySelector('.menu').style.opacity = 0;
-
-      this.state.menuShowing = false;
+      this.setState({ menuShowing: true });
     }
   }
 
@@ -62,9 +60,9 @@ class NavBar extends Component {
               <div id="link_menu" className="menu">
                 <ul>
                   <a href="/AboutMe"><li>ABOUT ME</li></a>
-                  <a href="#"><li>CURRENT LISTINGS</li></a>
-                  <a href="#"><li>RECENTLY CLOSED</li></a>
-                  <a href="#"><li>NEW TO THE MARKET</li></a>
+                  <a href=""><li>CURRENT LISTINGS</li></a>
+                  <a href=""><li>RECENTLY CLOSED</li></a>
+                  <a href=""><li>NEW TO THE MARKET</li></a>
                   <a href="#footer"><li>LETS CHAT</li></a>
                   <a href="/"><li>HOME</li></a>
                 </ul>

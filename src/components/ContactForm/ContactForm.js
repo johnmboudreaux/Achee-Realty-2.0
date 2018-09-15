@@ -12,7 +12,6 @@ class ContactForm extends Component {
     };
     this.updateState = this.updateState.bind(this);
     this.handleClick = this.handleClick.bind(this);
-    this.clearState = this.clearState.bind(this);
   }
 
   handleClick(event) {
@@ -30,7 +29,6 @@ class ContactForm extends Component {
     })
       .then(result => result.json())
       .then((parsedResponse) => {
-        this.clearState();
         return parsedResponse;
       })
       .catch(error => error.json())
@@ -40,14 +38,6 @@ class ContactForm extends Component {
   updateState(event) {
     this.setState({
       [event.target.name]: event.target.value,
-    });
-  }
-
-  clearState() {
-    return this.setState({
-      name: '',
-      email: '',
-      message: '',
     });
   }
 
