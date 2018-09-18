@@ -20,7 +20,7 @@ class NavBar extends Component {
     } else {
       document.querySelector('.menu-btn').classList.remove('close');
       document.querySelector('.menu').style.opacity = 0;
-      this.setState({ menuShowing: true });
+      this.setState({ menuShowing: false });
     }
   }
 
