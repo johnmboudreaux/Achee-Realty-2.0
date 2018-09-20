@@ -69,6 +69,6 @@ app.post('/api/v1/messageReceived', (request, response) => {
   }
 });
 
-app.listen(4000, () => console.log('Achee Realty listening on port 4000!'));
+app.listen(3000, () => console.log('Achee Realty listening on port 4000!'));
 
 module.exports = app;
