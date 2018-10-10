@@ -24,7 +24,6 @@ const requireHTTPS = (request, response, next) => {
   next();
 };
 if (process.env.NODE_ENV === 'production') {
-  console.log('is yis shit 26');
   app.use(requireHTTPS);
 }
 
