@@ -31,7 +31,7 @@ class ContactForm extends Component {
       .then((parsedResponse) => {
         return parsedResponse;
       })
-      .catch(error => error.json())
+      .catch(error => console.log(error))
       .then(parsedError => parsedError);
   }
 

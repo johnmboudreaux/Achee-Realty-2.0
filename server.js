@@ -15,6 +15,7 @@ app.use(
 );
 
 app.use(express.static('src'));
+app.use(express.static('build'));
 
 const requireHTTPS = (request, response, next) => {
   if (request.header('x-forwarded-proto') !== 'https') {
@@ -23,8 +24,13 @@ const requireHTTPS = (request, response, next) => {
   next();
 };
 if (process.env.NODE_ENV === 'production') {
+  console.log('is yis shit 26');
   app.use(requireHTTPS);
 }
+
+app.get('/', (req, res) => {
+  res.sendfile(path.join(__dirname + '/build/index.html'));
+});
 
 app.post('/api/v1/messageReceived', (request, response) => {
   const data = request.body;
@@ -69,6 +75,6 @@ app.post('/api/v1/messageReceived', (request, response) => {
   }
 });
 
-app.listen(3000, () => console.log('Achee Realty listening on port 4000!'));
+app.listen(8080, () => console.log('Achee Realty listening on port 8080!'));
 
 module.exports = app;
