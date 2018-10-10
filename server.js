@@ -75,6 +75,6 @@ app.post('/api/v1/messageReceived', (request, response) => {
   }
 });
 
-app.listen(8080, () => console.log('Achee Realty listening on port 8080!'));
+app.listen(3000, () => console.log('Achee Realty listening on port 3000!'));
 
 module.exports = app;
