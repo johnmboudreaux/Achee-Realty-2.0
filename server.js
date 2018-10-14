@@ -54,6 +54,7 @@ app.post('/api/v1/messageReceived', (request, response) => {
 
     transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
+        response.status(500);
         console.log(error);
       } else {
         response.status(201).json({
