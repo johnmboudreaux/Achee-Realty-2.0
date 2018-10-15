@@ -35,7 +35,7 @@
     margin-left: .5em;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 650px) {
   .blog-image {
     display: none;
   }
@@ -43,5 +43,4 @@
   .monthly-blog {
     padding: 1em;
   }
-
 }

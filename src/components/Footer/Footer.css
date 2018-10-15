@@ -1,4 +1,3 @@
-
 #footer {
     background-color: lightslategray;
     padding: 10em 0 10em 0;
@@ -97,12 +96,25 @@
   margin-bottom: 1em;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 650px) {
+  #footer a:hover {
+    color: blue;
+  }
+
+  .form-button:hover {
+    background-color: blue;
+  }
+
+  .helpful-links,
+  .things-to-do {
+    margin-bottom: 3em;
+  }
+
   .row {
     flex-wrap: wrap;
   }
 
   #footer {
-    text-align: justify;
+    text-align: center;
   }
 }
