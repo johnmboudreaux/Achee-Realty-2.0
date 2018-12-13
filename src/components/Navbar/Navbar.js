@@ -10,6 +10,7 @@ class NavBar extends Component {
       menuShowing: false,
     };
     this.toggleMenu = this.toggleMenu.bind(this);
+    this.routeToAboutMe = this.routeToAboutMe.bind(this);
   }
 
   toggleMenu() {
@@ -22,6 +23,10 @@ class NavBar extends Component {
       document.querySelector('.menu').style.opacity = 0;
       this.setState({ menuShowing: false });
     }
+  }
+
+  routeToAboutMe() {
+    console.log('nyello');
   }
 
   render() {
@@ -59,7 +64,7 @@ class NavBar extends Component {
               </div>
               <div id="link_menu" className="menu">
                 <ul>
-                  <a href="/AboutMe"><li>ABOUT ME</li></a>
+                  <a href="/AboutMe" onClick={this.routeToAboutMe}><li>ABOUT ME</li></a>
                   <a href=""><li>CURRENT LISTINGS</li></a>
                   <a href=""><li>RECENTLY CLOSED</li></a>
                   <a href=""><li>NEW TO THE MARKET</li></a>
