@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { Row, Col } from 'reactstrap';
 import logo from '../images/achee-logo.svg';
 import './Navbar.css';
@@ -25,8 +27,9 @@ class NavBar extends Component {
     }
   }
 
-  routeToAboutMe() {
-    console.log('nyello');
+  routeToAboutMe(event) {
+    event.preventDefault();
+    this.props.history.push('/AboutMe');
   }
 
   render() {
@@ -34,7 +37,7 @@ class NavBar extends Component {
       <div className="navBar-wrapper">
         <header>
           <Row>
-            <Col className="container-flush"sm={6}>
+            <Col className="container-flush"sm={8}>
               <section className="nav-title">
                 <div>
                   <a href="/">
@@ -50,7 +53,7 @@ class NavBar extends Component {
                 </div>
               </section>
             </Col>
-            <Col sm={6}>
+            <Col sm={4}>
               <div
                 onClick={this.toggleMenu}
                 onKeyPress={this.toggleMenu}
@@ -64,7 +67,7 @@ class NavBar extends Component {
               </div>
               <div id="link_menu" className="menu">
                 <ul>
-                  <a href="/AboutMe" onClick={this.routeToAboutMe}><li>ABOUT ME</li></a>
+                  <a href="" onClick={this.routeToAboutMe}><li>ABOUT ME</li></a>
                   <a href=""><li>CURRENT LISTINGS</li></a>
                   <a href=""><li>RECENTLY CLOSED</li></a>
                   <a href=""><li>NEW TO THE MARKET</li></a>
@@ -81,4 +84,8 @@ class NavBar extends Component {
   }
 }
 
-export default NavBar;
+NavBar.propTypes = {
+  history: PropTypes.object,
+};
+
+export default withRouter(NavBar);
