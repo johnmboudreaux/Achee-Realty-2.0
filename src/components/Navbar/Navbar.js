@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import { withRouter, Link } from 'react-router-dom';
 import { Row, Col } from 'reactstrap';
 import logo from '../images/achee-logo.svg';
 import './Navbar.css';
@@ -12,7 +11,6 @@ class NavBar extends Component {
       menuShowing: false,
     };
     this.toggleMenu = this.toggleMenu.bind(this);
-    this.routeToAboutMe = this.routeToAboutMe.bind(this);
   }
 
   toggleMenu() {
@@ -25,12 +23,6 @@ class NavBar extends Component {
       document.querySelector('.menu').style.opacity = 0;
       this.setState({ menuShowing: false });
     }
-  }
-
-  routeToAboutMe(event) {
-    event.preventDefault();
-    console.log(this.props);
-    this.props.history.push('/AboutMe');
   }
 
   render() {
@@ -68,7 +60,7 @@ class NavBar extends Component {
               </div>
               <div id="link_menu" className="menu">
                 <ul>
-                  <a href="" onClick={this.routeToAboutMe}><li>ABOUT ME</li></a>
+                  <Link to="/AboutMe/">ABOUT ME</Link>
                   <a href=""><li>CURRENT LISTINGS</li></a>
                   <a href=""><li>RECENTLY CLOSED</li></a>
                   <a href=""><li>NEW TO THE MARKET</li></a>
@@ -84,9 +76,5 @@ class NavBar extends Component {
     );
   }
 }
-
-NavBar.propTypes = {
-  history: PropTypes.object,
-};
 
 export default withRouter(NavBar);
