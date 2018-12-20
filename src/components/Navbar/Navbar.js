@@ -60,7 +60,7 @@ class NavBar extends Component {
               </div>
               <div id="link_menu" className="menu">
                 <ul>
-                  <Link to="/AboutMe/">ABOUT ME</Link>
+                  <Link to="/AboutMe">ABOUT ME</Link>
                   <Link to="/">CURRENT LISTINGS</Link>
                   <Link to="/">RECENTLY CLOSED</Link>
                   <Link to="/">NEW TO THE MARKET</Link>
