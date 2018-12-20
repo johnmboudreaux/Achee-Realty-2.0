@@ -13,13 +13,17 @@
     position: relative;
 }
 
-
 #hero-chevron {
     position: absolute;
     bottom: 0;
     height: 100px;
     width: 100%;
     text-align: center;
+}
+
+#hero-chevron a {
+    background: none;
+    border-bottom: none;
 }
 
 #hero-chevron a span {

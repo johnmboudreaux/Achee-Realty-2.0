@@ -33,14 +33,14 @@ class NavBar extends Component {
             <Col className="container-flush"sm={8}>
               <section className="nav-title">
                 <div>
-                  <a href="/">
+                  <Link to="/">
                     <span>
                       <img src={logo} alt="fancy a" />
                     </span>
                     <span>
                       CHEE REALTY SERVICES
                     </span>
-                  </a>
+                  </Link>
                   <h3>“Service Beyond The Sale”</h3>
                   {/* <h4>Gonzales, LA</h4> */}
                 </div>
@@ -60,12 +60,12 @@ class NavBar extends Component {
               </div>
               <div id="link_menu" className="menu">
                 <ul>
-                  <li><Link to="/AboutMe/">ABOUT ME</Link></li>
-                  <li><Link to="/">CURRENT LISTINGS</Link></li>
-                  <li><Link to="/">RECENTLY CLOSED</Link></li>
-                  <li><Link to="/">NEW TO THE MARKET</Link></li>
-                  <li><a href="#footer">LETS CHAT</a></li>
-                  <li><Link to="/">HOME</Link></li>
+                  <Link to="/AboutMe/">ABOUT ME</Link>
+                  <Link to="/">CURRENT LISTINGS</Link>
+                  <Link to="/">RECENTLY CLOSED</Link>
+                  <Link to="/">NEW TO THE MARKET</Link>
+                  <a href="#footer">LETS CHAT</a>
+                  <Link to="/">HOME</Link>
                 </ul>
               </div>
             </Col>
