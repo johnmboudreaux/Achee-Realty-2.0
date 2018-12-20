@@ -29,6 +29,7 @@ class NavBar extends Component {
 
   routeToAboutMe(event) {
     event.preventDefault();
+    console.log(this.props);
     this.props.history.push('/AboutMe');
   }
 
