@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from '../Navbar/Navbar';
 import './Hero.css';
 
-const Hero = ({ clickOffMenuToClose }) => {
+const Hero = () => {
   const scrollToBottom = () => {
     document.querySelector('#blog-scroll').scrollIntoView({
       behavior: 'smooth',
@@ -10,7 +10,7 @@ const Hero = ({ clickOffMenuToClose }) => {
   };
 
   return (
-    <div onClick={clickOffMenuToClose} className=" hero">
+    <div className=" hero">
       <div className="darken-overlay">
         <Navbar />
         <section

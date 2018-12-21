@@ -43,7 +43,7 @@ class NavBar extends Component {
       <div className="navBar-wrapper">
         <header>
           <Row>
-            <Col className="container-flush"sm={8}>
+            <Col className="container-flush"sm={6}>
               <section className="nav-title">
                 <div>
                   <Link to="/">
@@ -55,11 +55,10 @@ class NavBar extends Component {
                     </span>
                   </Link>
                   <h3>“Service Beyond The Sale”</h3>
-                  {/* <h4>Gonzales, LA</h4> */}
                 </div>
               </section>
             </Col>
-            <Col sm={4}>
+            <Col sm={6}>
               <div
                 onClick={this.toggleMenu}
                 onKeyPress={this.toggleMenu}
