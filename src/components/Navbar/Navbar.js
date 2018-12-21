@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { withRouter, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Row, Col } from 'reactstrap';
+import onClickOutside from 'react-onclickoutside';
 import logo from '../images/achee-logo.svg';
 import './Navbar.css';
 
@@ -11,16 +12,28 @@ class NavBar extends Component {
       menuShowing: false,
     };
     this.toggleMenu = this.toggleMenu.bind(this);
+    this.handleClickOutside = this.handleClickOutside.bind(this);
   }
 
   toggleMenu() {
     if (!this.state.menuShowing) {
       document.querySelector('.menu-btn').classList.add('close');
       document.querySelector('.menu').style.opacity = 0.9;
+      document.querySelector('.menu').style.display = 'block';
       this.setState({ menuShowing: true });
     } else {
       document.querySelector('.menu-btn').classList.remove('close');
       document.querySelector('.menu').style.opacity = 0;
+      document.querySelector('.menu').style.display = 'none';
+      this.setState({ menuShowing: false });
+    }
+  }
+
+  handleClickOutside(evt) {
+    if (this.state.menuShowing) {
+      document.querySelector('.menu-btn').classList.remove('close');
+      document.querySelector('.menu').style.opacity = 0;
+      document.querySelector('.menu').style.display = 'none';
       this.setState({ menuShowing: false });
     }
   }
@@ -74,4 +87,4 @@ class NavBar extends Component {
   }
 }
 
-export default withRouter(NavBar);
+export default onClickOutside(NavBar);

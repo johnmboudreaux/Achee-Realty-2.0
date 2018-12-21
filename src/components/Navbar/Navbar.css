@@ -39,7 +39,7 @@ header {
 }
 
 .nav-title a:hover {
-  color: #c9c094;
+  cursor: pointer;
 }
 
 .nav-title img {
@@ -102,6 +102,7 @@ header {
 
 .menu {
   background: #f1f1f1;
+  display: none;
   font-weight: bold;
   font-size: 1em;
   position: absolute;

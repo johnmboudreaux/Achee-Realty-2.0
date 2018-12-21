@@ -6,14 +6,21 @@ import Footer from '../Footer/Footer';
 import './LandingPage.css';
 
 class LandingPage extends Component {
+  constructor() {
+    super();
+    this.clickOffMenuToClose = this.clickOffMenuToClose.bind(this);
+  }
+  clickOffMenuToClose() {
+    console.log('clickOff');
+  }
+
   render() {
     return (
       <div className="landing-page">
-        <Hero />
+        <Hero clickOffMenuToClose={this.clickOffMenuToClose} />
         <MonthlyInfo />
         <Footer />
-      </div>
-    );
+      </div>);
   }
 }
 
