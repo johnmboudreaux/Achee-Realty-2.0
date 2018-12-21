@@ -1,6 +1,6 @@
 #footer {
     background-color: lightslategray;
-    padding: 10em 0 10em 0;
+    padding: 7em 0 3em 0;
 }
 
 #footer a {
@@ -42,6 +42,10 @@
 .things-to-do h3,
 .contact h3 {
     font-size: 2em;
+}
+
+.helpful-links {
+    margin-left: 1em;
 }
 
 .icon {

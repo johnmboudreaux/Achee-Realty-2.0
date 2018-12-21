@@ -1,9 +1,10 @@
 .monthly-blog {
-    margin-top: 9em;
+    margin-top: 6em;
 }
 
 .blog-title header {
     font-size: 1em;
+    margin-left: .5em;
 }
 
 .blog-title {
@@ -16,7 +17,7 @@
 
 .blog-contents {
     display: flex;
-    margin: 2em .5em 8em .5em
+    margin: 2em 1.5em 6em 1.5em;
 }
 
 .blog {
